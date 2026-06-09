@@ -795,7 +795,8 @@
         <div class="why-feat"><div class="feat-icon">🌿</div><div><h4>Attention to Detail</h4><p>We take pride in delivering thorough, high-quality cleaning services.</p></div></div>
         <div class="why-feat"><div class="feat-icon">📋</div><div><h4>Thorough Cleaning Process</h4><p>Every service follows a structured approach to provide consistent results.</p></div></div>
         <div class="why-feat"><div class="feat-icon">⏰</div><div><h4>Punctual & Reliable</h4><p>We arrive on time, every time - and notify you when we're on our way.</p></div></div>
-        <div class="why-feat"><div class="feat-icon">💳</div><div><h4>Easy Payment</h4><p>Pay securely online. Invoices sent automatically after each service.</p></div></div>
+        <div class="why-feat"><div class="feat-icon">💳</div><div><h4>Easy Payment</<h4>Flexible Payment Options</h4>
+<p>Payment can be arranged after your cleaning service. Invoices available upon request.</p></div></div>
       </div>
       <div style="display: flex; flex-direction: column; gap: 20px;">
         <div style="background: var(--green-deep); color: white; border-radius: 24px; padding: 40px;">
@@ -988,11 +989,19 @@
         <div style="background: var(--green-deep); border-radius: var(--radius); padding: 28px; color: white;">
           <div style="font-size:24px; margin-bottom:10px;">💬</div>
           <h4 style="font-family:'DM Serif Display',serif; font-size:20px; margin-bottom:8px;">Prefer to chat?</h4>
-          <p style="font-size:14px; opacity:0.8; line-height:1.6;">Send us a message on social media - we're usually online and happy to help!</p>
-          <div style="display:flex; gap:10px; margin-top:16px;">
-            <a href="https://www.facebook.com/profile.php?id=61590433301017&sk=about" target="_blank" rel="noopener" class="btn-primary" style="font-size:13px; padding:10px 18px; text-decoration:none; display:inline-block;">Facebook</a>
-            <a href="https://www.instagram.com/lumiocleaning/" target="_blank" rel="noopener" class="btn-secondary" style="font-size:13px; padding:8px 18px; background:transparent; color:var(--green-light); border-color:rgba(116,198,157,0.3); text-decoration:none; display:inline-block;">Instagram</a>
-          </div>
+          <p style="font-size:14px; opacity:0.8; line-height:1.6;">
+  Message us directly on WhatsApp and we'll get back to you as soon as possible.
+</p>
+
+<div style="margin-top:16px;">
+  <a href="https://wa.me/61420677321"
+     target="_blank"
+     rel="noopener"
+     class="btn-primary"
+     style="font-size:13px;padding:10px 18px;text-decoration:none;display:inline-block;">
+     WhatsApp Us
+  </a>
+</div>
         </div>
       </div>
 
@@ -1291,6 +1300,17 @@
   document.getElementById('apply-modal').addEventListener('click', function(e) {
     if (e.target === this) closeModal();
   });
-</script>
+<function submitDiscountLead() {
+
+  const phone = document.getElementById('discount-phone').value;
+  const email = document.getElementById('discount-email').value;
+
+  const body = encodeURIComponent(
+    `Mobile Number: ${phone}\nEmail Address: ${email}`
+  );
+
+  window.location.href =
+    `mailto:info@lumiocleaning.com?subject=${encodeURIComponent('Lumio 15% Discount Customer')}&body=${body}`;
+}
 </body>
 </html>
