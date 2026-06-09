@@ -803,10 +803,33 @@
           <p style="font-size: 15px; opacity: 0.8; margin-bottom: 24px; line-height: 1.6;">Our team will help you find the perfect clean for your home and budget. Get a free quote today.</p>
           <button class="btn-primary" onclick="showPage('contact')" style="background: var(--green-light); color: var(--green-deep);">Get Free Quote</button>
         </div>
-        <div style="background: white; border-radius: 20px; padding: 28px; border: 1px solid rgba(116,198,157,0.20);">
-          <div style="font-size: 13px; font-weight: 700; color: var(--green-mid); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">🎁 First Clean Offer</div>
-          <div style="font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--green-deep); margin-bottom: 8px;">15% Off</div>
-          <p style="font-size: 14px; color: var(--text-body);">Book your first clean and save 15%. Use code <strong style="color:var(--green-fresh)">LUMIO15</strong> at checkout.</p>
+        <div style="font-size:13px;font-weight:700;color:var(--green-mid);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;">
+  🎁 First Clean Offer
+</div>
+
+<div style="font-family:'DM Serif Display',serif;font-size:28px;color:var(--green-deep);margin-bottom:8px;">
+  15% Off Your First Clean
+</div>
+
+<p style="font-size:14px;color:var(--text-body);margin-bottom:16px;">
+  Enter your mobile number and email address and we'll contact you to arrange your discounted clean.
+</p>
+
+<input id="discount-phone"
+       type="tel"
+       placeholder="Mobile Number"
+       style="width:100%;padding:12px;margin-bottom:10px;border:1px solid #ddd;border-radius:8px;">
+
+<input id="discount-email"
+       type="email"
+       placeholder="Email Address"
+       style="width:100%;padding:12px;margin-bottom:12px;border:1px solid #ddd;border-radius:8px;">
+
+<button class="btn-primary"
+        style="width:100%;"
+        onclick="submitDiscountLead()">
+  Claim 15% Discount
+</button>
         </div>
       </div>
     </div>
