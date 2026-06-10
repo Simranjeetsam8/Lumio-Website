@@ -1300,17 +1300,13 @@
   document.getElementById('apply-modal').addEventListener('click', function(e) {
     if (e.target === this) closeModal();
   });
-<function submitDiscountLead() {
 
-  const phone = document.getElementById('discount-phone').value;
-  const email = document.getElementById('discount-email').value;
-
-  const body = encodeURIComponent(
-    `Mobile Number: ${phone}\nEmail Address: ${email}`
-  );
-
-  window.location.href =
-    `mailto:info@lumiocleaning.com?subject=${encodeURIComponent('Lumio 15% Discount Customer')}&body=${body}`;
-}
+  function submitDiscountLead() {
+    const phone = document.getElementById('discount-phone').value;
+    const email = document.getElementById('discount-email').value;
+    const body = encodeURIComponent(`Mobile Number: ${phone}\nEmail Address: ${email}`);
+    window.location.href = `mailto:info@lumiocleaning.com?subject=${encodeURIComponent('Lumio 15% Discount Customer')}&body=${body}`;
+  }
+</script>
 </body>
 </html>
