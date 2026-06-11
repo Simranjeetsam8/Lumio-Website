@@ -1,1 +1,1354 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumio Cleaning - Eco-Friendly Cleaning Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FK6M8JX1RD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FK6M8JX1RD');
+</script>
+
+<style>
+  :root {
+    --green-deep: #1a3a2a;
+    --green-mid: #2d6a4f;
+    --green-fresh: #40916c;
+    --green-light: #74c69d;
+    --green-pale: #b7e4c7;
+    --green-mist: #d8f3dc;
+    --green-foam: #f0faf3;
+    --white: #ffffff;
+    --cream: #fafcf8;
+    --charcoal: #1e2d26;
+    --text-body: #3b5249;
+    --text-soft: #6b8f7a;
+    --accent: #52b788;
+    --gold: #c8a96e;
+    --radius: 18px;
+    --shadow: 0 8px 40px rgba(26,58,42,0.10);
+    --shadow-sm: 0 2px 12px rgba(26,58,42,0.08);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(116,198,157,0.18);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 4px 24px rgba(26,58,42,0.10); }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px; cursor: pointer;
+    text-decoration: none;
+  }
+  .logo-leaf {
+    width: 42px; height: 42px;
+    background: linear-gradient(135deg, var(--green-fresh), var(--green-light));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 12px rgba(64,145,108,0.25);
+    flex-shrink: 0;
+  }
+  .logo-text-group {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+  }
+  .logo-text-top {
+    font-family: 'DM Serif Display', serif;
+    font-size: 25px; color: var(--green-deep);
+    font-weight: 700;
+    letter-spacing: -0.2px;
+  }
+  .logo-text-bottom {
+    font-family: 'Nunito', sans-serif;
+    font-size: 10px; color: var(--green-fresh);
+    letter-spacing: 2.2px; text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .nav-links {
+    display: flex; align-items: center; gap: 6px;
+    list-style: none;
+  }
+  .nav-links a {
+    padding: 8px 16px; border-radius: 50px;
+    font-size: 14px; font-weight: 600;
+    color: var(--text-body); text-decoration: none;
+    transition: all 0.2s; cursor: pointer;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    background: var(--green-mist); color: var(--green-mid);
+  }
+  .nav-cta {
+    background: var(--green-fresh) !important;
+    color: white !important;
+    box-shadow: 0 4px 14px rgba(64,145,108,0.35);
+  }
+  .nav-cta:hover { background: var(--green-mid) !important; transform: translateY(-1px); }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { width: 24px; height: 2px; background: var(--green-deep); border-radius: 2px; transition: all 0.3s; }
+
+  /* ── PAGES ── */
+  .page { display: none; padding-top: 80px; min-height: 100vh; }
+  .page.active { display: block; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: calc(100vh - 80px);
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 60px 48px 60px;
+    gap: 60px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -120px; right: -120px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(116,198,157,0.18) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -80px; left: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(64,145,108,0.10) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-content { position: relative; z-index: 2; }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--green-mist); border: 1px solid var(--green-pale);
+    border-radius: 50px; padding: 8px 16px; margin-bottom: 28px;
+    font-size: 13px; font-weight: 700; color: var(--green-mid);
+    letter-spacing: 0.5px; text-transform: uppercase;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-badge::before { content: '🌿'; font-size: 14px; }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1.08;
+    color: var(--green-deep);
+    margin-bottom: 24px;
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+  h1 em { font-style: italic; color: var(--green-fresh); }
+
+  .hero-sub {
+    font-size: 18px; line-height: 1.7;
+    color: var(--text-body); margin-bottom: 40px;
+    max-width: 480px;
+    animation: fadeUp 0.7s 0.2s ease both;
+    font-weight: 400;
+  }
+
+  .hero-buttons {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    animation: fadeUp 0.7s 0.3s ease both;
+  }
+  .btn-primary {
+    background: var(--green-fresh);
+    color: white; border: none;
+    padding: 16px 32px; border-radius: 50px;
+    font-size: 15px; font-weight: 700;
+    cursor: pointer; transition: all 0.25s;
+    box-shadow: 0 6px 20px rgba(64,145,108,0.35);
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0.2px;
+  }
+  .btn-primary:hover { background: var(--green-mid); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(64,145,108,0.40); }
+
+  .btn-secondary {
+    background: white; color: var(--green-fresh);
+    border: 2px solid var(--green-pale);
+    padding: 14px 30px; border-radius: 50px;
+    font-size: 15px; font-weight: 700;
+    cursor: pointer; transition: all 0.25s;
+    font-family: 'Nunito', sans-serif;
+  }
+  .btn-secondary:hover { border-color: var(--green-fresh); background: var(--green-foam); }
+
+  .hero-stats {
+    display: flex; gap: 32px; margin-top: 48px; padding-top: 40px;
+    border-top: 1px solid var(--green-pale);
+    animation: fadeUp 0.7s 0.4s ease both;
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px; color: var(--green-deep); line-height: 1;
+  }
+  .stat-label { font-size: 13px; color: var(--text-soft); font-weight: 500; margin-top: 4px; }
+
+  .hero-visual {
+    position: relative; z-index: 2;
+    animation: fadeIn 1s 0.2s ease both;
+  }
+  .hero-card-main {
+    background: white; border-radius: 28px;
+    padding: 40px; box-shadow: var(--shadow);
+    border: 1px solid rgba(116,198,157,0.20);
+    position: relative; overflow: hidden;
+  }
+  .hero-card-main::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--green-fresh), var(--green-light));
+  }
+  .card-icon-row {
+    display: flex; gap: 12px; margin-bottom: 28px;
+  }
+  .card-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
+  }
+  .card-icon.g1 { background: var(--green-mist); }
+  .card-icon.g2 { background: #e8f5e9; }
+  .card-icon.g3 { background: #f1f8e9; }
+
+  .card-label { font-size: 13px; color: var(--text-soft); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .card-title-sm { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--green-deep); margin-bottom: 6px; }
+  .card-desc { font-size: 14px; color: var(--text-body); line-height: 1.6; }
+
+  .floating-badge {
+    position: absolute;
+    background: white; border-radius: 16px; padding: 14px 18px;
+    box-shadow: 0 8px 24px rgba(26,58,42,0.14);
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 700; color: var(--green-deep);
+    animation: float 3s ease-in-out infinite;
+  }
+  .floating-badge.b1 { bottom: -20px; left: -24px; animation-delay: 0s; }
+  .floating-badge.b2 { top: -16px; right: -20px; animation-delay: 1.5s; }
+  .badge-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--green-fresh); }
+
+  /* ── ECO STRIP ── */
+  .eco-strip {
+    background: var(--green-deep); color: white;
+    padding: 20px 48px;
+    display: flex; align-items: center; gap: 40px; overflow: hidden;
+  }
+  .eco-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 14px; font-weight: 600; white-space: nowrap;
+    opacity: 0.92;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 80px 48px; }
+  .section-tag {
+    display: inline-block;
+    background: var(--green-mist); color: var(--green-mid);
+    font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    padding: 6px 14px; border-radius: 50px; margin-bottom: 16px;
+  }
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 3.5vw, 46px); color: var(--green-deep);
+    line-height: 1.1; margin-bottom: 16px;
+  }
+  h2 em { font-style: italic; color: var(--green-fresh); }
+  .section-sub { font-size: 17px; color: var(--text-body); line-height: 1.7; max-width: 560px; }
+
+  .section-header { margin-bottom: 56px; }
+  .section-header.center { text-align: center; }
+  .section-header.center .section-sub { margin: 0 auto; }
+
+  /* ── SERVICES PAGE ── */
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  .service-card {
+    background: white; border-radius: var(--radius);
+    padding: 36px; border: 1px solid rgba(116,198,157,0.20);
+    transition: all 0.3s; position: relative; overflow: hidden;
+    cursor: default;
+  }
+  .service-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--green-fresh), var(--green-light));
+    transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+  .service-card:hover::after { transform: scaleX(1); }
+
+  .service-emoji { font-size: 36px; margin-bottom: 20px; display: block; }
+  .service-card h3 { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--green-deep); margin-bottom: 10px; }
+  .service-card p { font-size: 14px; color: var(--text-body); line-height: 1.7; margin-bottom: 20px; }
+  .service-tag {
+    display: inline-block; background: var(--green-foam); color: var(--green-mid);
+    font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 50px;
+  }
+  .service-price {
+    position: absolute; top: 24px; right: 24px;
+    font-size: 13px; font-weight: 700; color: var(--green-fresh);
+  }
+
+  /* ── WHY LUMIO ── */
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .why-visual {
+    background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+    border-radius: 28px; padding: 48px; color: white; position: relative; overflow: hidden;
+  }
+  .why-visual::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    background: rgba(255,255,255,0.06); border-radius: 50%;
+  }
+  .why-bignum {
+    font-family: 'DM Serif Display', serif; font-size: 80px; line-height: 1;
+    color: rgba(255,255,255,0.15); position: absolute; bottom: 20px; right: 28px;
+  }
+  .why-list { list-style: none; margin-top: 24px; display: flex; flex-direction: column; gap: 14px; }
+  .why-list li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.9);
+  }
+  .why-list li::before { content: '✓'; color: var(--green-light); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  .why-features { display: flex; flex-direction: column; gap: 24px; }
+  .why-feat {
+    display: flex; gap: 20px; align-items: flex-start;
+    padding: 24px; background: white; border-radius: 16px;
+    border: 1px solid rgba(116,198,157,0.20);
+    transition: box-shadow 0.2s;
+  }
+  .why-feat:hover { box-shadow: var(--shadow-sm); }
+  .feat-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: var(--green-mist); display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .why-feat h4 { font-size: 16px; font-weight: 700; color: var(--green-deep); margin-bottom: 5px; }
+  .why-feat p { font-size: 14px; color: var(--text-body); line-height: 1.6; }
+
+  /* ── CONTACT & BOOK LAYOUTS ── */
+  .contact-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
+  .contact-info { display: flex; flex-direction: column; gap: 24px; }
+  .contact-block {
+    background: white; border-radius: var(--radius); padding: 28px;
+    border: 1px solid rgba(116,198,157,0.20);
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .contact-block-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--green-mist); display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .contact-block h4 { font-weight: 700; color: var(--green-deep); margin-bottom: 4px; }
+  .contact-block p { font-size: 14px; color: var(--text-body); }
+  .contact-block a { color: var(--green-fresh); text-decoration: none; font-weight: 600; }
+
+  .form-card {
+    background: white; border-radius: 24px; padding: 44px;
+    box-shadow: var(--shadow); border: 1px solid rgba(116,198,157,0.15);
+  }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+  .form-group.full { grid-column: 1 / -1; }
+  .form-group label { font-size: 13px; font-weight: 700; color: var(--green-deep); text-transform: uppercase; letter-spacing: 0.5px; }
+  .form-group input, .form-group textarea, .form-group select {
+    padding: 14px 18px; border-radius: 12px;
+    border: 1.5px solid var(--green-pale);
+    font-size: 15px; font-family: 'Nunito', sans-serif;
+    color: var(--charcoal); background: var(--cream);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+    border-color: var(--green-fresh); box-shadow: 0 0 0 3px rgba(64,145,108,0.12);
+    background: white;
+  }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+  .form-submit { margin-top: 8px; width: 100%; }
+
+  .book-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: start; }
+  .book-form-card { background: white; border-radius: 24px; padding: 44px; box-shadow: var(--shadow); border: 1px solid rgba(116,198,157,0.15); }
+
+  .service-select-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+  .service-option {
+    border: 2px solid var(--green-pale); border-radius: 14px; padding: 18px;
+    cursor: pointer; transition: all 0.2s; text-align: center;
+  }
+  .service-option:hover { border-color: var(--green-fresh); background: var(--green-foam); }
+  .service-option.selected { border-color: var(--green-fresh); background: var(--green-mist); }
+  .service-option .s-icon { font-size: 24px; margin-bottom: 6px; }
+  .service-option .s-name { font-size: 13px; font-weight: 700; color: var(--green-deep); }
+
+  .book-info { display: flex; flex-direction: column; gap: 20px; }
+  .book-benefit {
+    display: flex; gap: 14px; align-items: center;
+    padding: 18px; background: white; border-radius: 14px;
+    border: 1px solid rgba(116,198,157,0.18);
+  }
+  .book-benefit-icon { font-size: 22px; flex-shrink: 0; }
+  .book-benefit h4 { font-weight: 700; color: var(--green-deep); font-size: 15px; margin-bottom: 3px; }
+  .book-benefit p { font-size: 13px; color: var(--text-body); }
+
+  .price-estimate {
+    background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+    color: white; border-radius: 20px; padding: 32px;
+  }
+  .price-estimate h4 { font-family: 'DM Serif Display', serif; font-size: 22px; margin-bottom: 6px; }
+  .price-estimate p { font-size: 14px; opacity: 0.8; margin-bottom: 20px; }
+  .price-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 14px; }
+  .price-row:last-child { border: none; font-weight: 700; font-size: 16px; }
+
+  /* ── CAREER PAGE ── */
+  .career-hero {
+    background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
+    border-radius: 28px; padding: 64px; color: white; text-align: center;
+    margin-bottom: 60px; position: relative; overflow: hidden;
+  }
+  .career-hero::before {
+    content: '🌿'; font-size: 180px; opacity: 0.05;
+    position: absolute; top: -20px; right: 20px; line-height: 1;
+  }
+  .career-hero h2 { color: white; font-size: 40px; margin-bottom: 16px; }
+  .career-hero p { font-size: 18px; opacity: 0.85; max-width: 580px; margin: 0 auto 32px; }
+
+  /* ── REVIEWS PAGE ── */
+  .rating-hero {
+    background: white; border-radius: 24px; padding: 48px;
+    box-shadow: var(--shadow-sm); text-align: center; margin-bottom: 48px;
+    border: 1px solid rgba(116,198,157,0.20);
+    display: flex; justify-content: center; align-items: center; gap: 80px; flex-wrap: wrap;
+  }
+  .rating-big { font-family: 'DM Serif Display', serif; font-size: 80px; color: var(--green-deep); line-height: 1; }
+  .rating-stars { font-size: 28px; letter-spacing: 4px; margin: 8px 0; }
+  .rating-count { font-size: 14px; color: var(--text-soft); font-weight: 500; }
+  .rating-breakdown { display: flex; flex-direction: column; gap: 10px; min-width: 240px; }
+  .bar-row { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; color: var(--text-body); }
+  .bar-track { flex: 1; height: 8px; background: var(--green-mist); border-radius: 4px; overflow: hidden; }
+  .bar-fill { height: 100%; background: linear-gradient(90deg, var(--green-fresh), var(--green-light)); border-radius: 4px; }
+
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+  .review-card {
+    background: white; border-radius: var(--radius); padding: 32px;
+    border: 1px solid rgba(116,198,157,0.20); transition: box-shadow 0.25s;
+    position: relative;
+  }
+  .review-card:hover { box-shadow: var(--shadow-sm); }
+  .review-card::before { content: '"'; font-family: 'DM Serif Display', serif; font-size: 80px; color: var(--green-mist); position: absolute; top: 10px; right: 20px; line-height: 1; }
+  .review-stars { font-size: 16px; letter-spacing: 2px; margin-bottom: 14px; }
+  .review-text { font-size: 15px; color: var(--text-body); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+  .reviewer { display: flex; align-items: center; gap: 12px; }
+  .reviewer-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--green-fresh), var(--green-light));
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 700; font-size: 16px; flex-shrink: 0;
+  }
+  .reviewer-name { font-weight: 700; color: var(--green-deep); font-size: 15px; }
+  .reviewer-date { font-size: 12px; color: var(--text-soft); margin-top: 2px; }
+  .verified { font-size: 11px; color: var(--green-fresh); font-weight: 700; display: flex; align-items: center; gap: 4px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--green-deep); color: white; padding: 64px 48px 32px;
+  }
+ /* ==========================================================================
+   1. DESKTOP STYLES (Your complete original design)
+   ========================================================================== */
+.footer-grid { 
+  display: grid; 
+  grid-template-columns: 1.5fr 1fr 1fr 1fr; 
+  gap: 48px; 
+  margin-bottom: 48px; 
+}
+
+.footer-brand p { 
+  font-size: 14px; 
+  opacity: 0.7; 
+  line-height: 1.7; 
+  margin-top: 16px; 
+  max-width: 260px; 
+}
+
+.footer-col h5 { 
+  font-size: 12px; 
+  font-weight: 700; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+  opacity: 0.5; 
+  margin-bottom: 16px; 
+}
+
+.footer-col ul { 
+  list-style: none; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 10px; 
+}
+
+.footer-col a { 
+  color: rgba(255,255,255,0.75); 
+  text-decoration: none; 
+  font-size: 14px; 
+  cursor: pointer; 
+  transition: color 0.2s; 
+}
+
+.footer-col a:hover { 
+  color: var(--green-light); 
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1); 
+  padding: 28px 20px 20px 20px; /* Protected buffer for mobile screens */
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  font-size: 13px; 
+  opacity: 0.5; 
+  flex-wrap: wrap; 
+  gap: 12px;
+  box-sizing: border-box;        /* Prevents layout from spilling over edges */
+  width: 100%;
+}
+
+/* ==========================================================================
+   2. MOBILE STYLES (The automated fix for phone screens)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr; /* Stacks the 4 side-by-side columns into a neat vertical list */
+    gap: 32px;                  
+    margin-bottom: 32px;
+  }
+
+  .footer-brand p {
+    max-width: 100%;            /* Allows the description text to use the full mobile width smoothly */
+  }
+
+  .footer-bottom {
+    flex-direction: column;      /* Stacks copyright and business info vertically */
+    justify-content: center;     
+    text-align: center;          /* Centers all bottom elements perfectly */
+    gap: 10px;
+  }
+}
+
+/* This automatically fixes the layout on mobile screens */
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;      /* Stacks the text lines neatly on top of each other */
+    justify-content: center;     /* Centers the layout group */
+    text-align: center;          /* Centers the text inside */
+    gap: 10px;
+  }
+}
+
+  /* Footer context adjustments for branding text colors */
+  footer .logo-text-top { color: var(--white); }
+  footer .logo-text-bottom { color: var(--green-light); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* ── SUCCESS STATE ── */
+  .success-msg {
+    background: var(--green-mist); border: 1px solid var(--green-pale);
+    border-radius: 12px; padding: 16px 20px;
+    color: var(--green-mid); font-weight: 600; font-size: 14px;
+    display: none; margin-top: 12px;
+    align-items: center; gap: 10px;
+  }
+  .success-msg.show { display: flex; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; position: fixed; top: 72px; left: 0; right: 0; background: white; flex-direction: column; padding: 20px 24px; border-bottom: 1px solid var(--green-pale); gap: 4px; }
+    .nav-links.open { display: flex; }
+    .hamburger { display: flex; }
+
+    .hero { grid-template-columns: 1fr; padding: 40px 24px; gap: 40px; }
+    .hero-visual { display: none; }
+    section { padding: 60px 24px; }
+    .contact-layout, .book-layout, .why-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
+    .service-select-grid { grid-template-columns: 1fr 1fr; }
+    .rating-hero { gap: 32px; }
+    nav { padding: 14px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" onclick="showPage('home')">
+    <div class="logo-leaf">
+      <svg width="24" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 4 C22 4 38 12 38 24 C38 36 22 42 22 42 C22 42 6 36 6 24 C6 12 22 4 22 4 Z" fill="rgba(255,255,255,0.25)"/>
+        <path d="M22 6 C22 6 36 14 36 24 C36 34 22 40 22 40 C22 40 8 34 8 24 C8 14 22 6 22 6 Z" fill="rgba(255,255,255,0.5)"/>
+        <line x1="22" y1="9" x2="22" y2="38" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="22" y1="20" x2="30" y2="25" stroke="white" stroke-width="1" stroke-linecap="round"/>
+        <line x1="22" y1="27" x2="31" y2="30" stroke="white" stroke-width="1" stroke-linecap="round"/>
+        <line x1="22" y1="20" x2="14" y2="25" stroke="white" stroke-width="1" stroke-linecap="round"/>
+        <line x1="22" y1="27" x2="13" y2="30" stroke="white" stroke-width="1" stroke-linecap="round"/>
+        <path d="M22 32 C22 32 18 28 18 25.5 C18 23.1 19.8 21 22 21 C24.2 21 26 23.1 26 25.5 C26 28 22 32 22 32 Z" fill="white" opacity="0.9"/>
+      </svg>
+    </div>
+    <div class="logo-text-group">
+      <span class="logo-text-top">Lumio</span>
+      <span class="logo-text-bottom">Cleaning</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a onclick="showPage('home')" class="active" id="nav-home">Home</a></li>
+    <li><a onclick="showPage('services')" id="nav-services">Services</a></li>
+    <li><a onclick="showPage('about')" id="nav-about">About Us</a></li>
+    <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+    <li><a onclick="showPage('book')" id="nav-book" class="nav-cta">Book Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ══════════ HOME PAGE ══════════ -->
+<div id="page-home" class="page active">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Perth's Trusted Cleaning Experts</div>
+      <h1>Perth's Cleaning Experts <br><em>Trusted, Thorough</em> & Affordable.</h1>
+      <p class="hero-sub">Lumio Cleaning brings a brighter clean to homes, offices, and commercial spaces across Perth, WA. Experienced, reliable, and committed to quality every time.</p>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="showPage('book')">Book a Clean</button>
+        <button class="btn-secondary" onclick="showPage('services')">Our Services →</button>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-label">✓ Locally Owned</div></div>
+        <div><div class="stat-label">✓ Flexible Scheduling</div></div>
+        <div><div class="stat-label">✓ Satisfaction Guaranteed</div></div>
+        <div><div class="stat-label">✓ Professional Service</div></div>
+        <div><div class="stat-label">✓ Attention to Detail</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-main">
+        <div class="card-icon-row">
+          <div class="card-icon g1">🌿</div>
+          <div class="card-icon g2">✨</div>
+          <div class="card-icon g3">💧</div>
+        </div>
+        <div class="card-label">Why Choose Lumio</div>
+        <div class="card-title-sm">Clean You Can Trust</div>
+        <div class="card-desc">Our trained cleaning professionals provide thorough, high-quality cleaning with attention to detail.</div>
+      </div>
+      <div class="floating-badge b1"><div class="badge-dot"></div> Next available: Tomorrow 9am</div>
+      <div class="floating-badge b2"><div class="badge-dot"></div> 100% Reliable Service</div>
+    </div>
+  </section>
+
+  <div class="eco-strip">
+    <div class="eco-item">🌱 Plant-Based Products</div>
+    <div style="opacity:0.3;font-size:20px">·</div>
+    <div class="eco-item">♻️ Zero-Waste Packaging</div>
+    <div style="opacity:0.3;font-size:20px">·</div>
+    <div class="eco-item">💚 Environmentally Responsible Practices</div>
+    <div style="opacity:0.3;font-size:20px">·</div>
+    <div class="eco-item">🔬 Thorough & Detail-Oriented Cleaning</div>
+    <div style="opacity:0.3;font-size:20px">·</div>
+    <div class="eco-item">🏠 Locally Owned</div>
+  </div>
+
+  <section style="background: var(--green-foam);">
+    <div class="section-header center">
+      <div class="section-tag">What We Offer</div>
+      <h2>Services for Every <em>Space</em></h2>
+      <p class="section-sub">From regular home maintenance to deep cleans and commercial spaces - we handle it all with care.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" onclick="showPage('services')">
+        <span class="service-emoji">🏠</span>
+        <h3>Residential Cleaning</h3>
+        <p>Weekly, fortnightly, or one-off home cleans tailored to your lifestyle and schedule.</p>
+        <span class="service-tag">Most Popular</span>
+      </div>
+      <div class="service-card" onclick="showPage('services')">
+        <span class="service-emoji">✨</span>
+        <h3>Deep Cleaning</h3>
+        <p>A thorough top-to-bottom clean covering every corner, surface, and hidden space.</p>
+        <span class="service-tag">Recommended</span>
+      </div>
+      <div class="service-card" onclick="showPage('services')">
+        <span class="service-emoji">🏢</span>
+        <h3>Commercial Spaces</h3>
+        <p>Offices, retail, and commercial properties kept spotless for your team and customers.</p>
+        <span class="service-tag">Business</span>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 36px;">
+      <button class="btn-primary" onclick="showPage('services')">See All Services</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="why-grid">
+      <div class="why-visual">
+        <div class="section-tag" style="background:rgba(255,255,255,0.15);color:white;">Our Promise</div>
+        <h2 style="color:white; font-size:34px; margin-top: 12px;">A Brighter Clean,<br>Every Time</h2>
+        <ul class="why-list">
+          <li>Reliable cleaning services for homes, offices, and commercial spaces</li>
+          <li>Flexible scheduling to fit your lifestyle or business needs</li>
+          <li>Personalised cleaning solutions tailored to your requirements</li>
+          <li>Thorough, detail-focused cleaning with every visit</li>
+          <li>Transparent pricing with no hidden costs</li>
+          <li>Professional, friendly service from a local Perth business</li>
+          <li>Committed to delivering quality results and customer satisfaction</li>
+        </ul>
+        <div class="why-bignum">100%</div>
+      </div>
+      <div class="why-features">
+        <div class="why-feat">
+          <div class="feat-icon">🧹</div>
+          <div>
+            <h4>Professional Cleaning</h4>
+            <p>Reliable cleaning services delivered with care and attention to detail.</p>
+          </div>
+        </div>
+        <div class="why-feat">
+          <div class="feat-icon">📅</div>
+          <div>
+            <h4>Flexible Scheduling</h4>
+            <p>Choose a cleaning time that fits your home, business, and routine.</p>
+          </div>
+        </div>
+        <div class="why-feat">
+          <div class="feat-icon">✨</div>
+          <div>
+            <h4>Tailored to Your Needs</h4>
+            <p>Customised cleaning plans designed around your specific requirements.</p>
+          </div>
+        </div>
+        <div class="why-feat">
+          <div class="feat-icon">⭐</div>
+          <div>
+            <h4>Quality You Can Trust</h4>
+            <p>Committed to providing consistent service and a positive customer experience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--green-foam); text-align: center; padding: 80px 48px;">
+    <div class="section-tag">Get Started Today</div>
+    <h2 style="margin-bottom:16px;">Ready for a <em>Fresher</em> Home?</h2>
+    <p style="font-size:17px; color:var(--text-body); max-width:500px; margin: 0 auto 36px;">Book your first clean and experience the Lumio difference - eco-friendly, professional, and stress-free.</p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <button class="btn-primary" onclick="showPage('book')">Book a Clean</button>
+      <button class="btn-secondary" onclick="showPage('contact')">Get in Touch</button>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════ SERVICES PAGE ══════════ -->
+<div id="page-services" class="page">
+  <section>
+    <div class="section-header">
+      <div class="section-tag">What We Clean</div>
+      <h2>Services Designed <em>For You</em></h2>
+      <p class="section-sub">Every clean is customised to your space, your schedule, and your lifestyle.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-price">From $120</span>
+        <span class="service-emoji">🏠</span>
+        <h3>Residential Cleaning</h3>
+        <p>Regular home cleaning that keeps your space consistently fresh. We handle all rooms, surfaces, bathrooms, and kitchens. Available weekly, fortnightly, or monthly.</p>
+        <span class="service-tag">Most Popular</span>
+      </div>
+      <div class="service-card">
+        <span class="service-price">From $280</span>
+        <span class="service-emoji">✨</span>
+        <h3>Deep Clean</h3>
+        <p>Our most thorough service - perfect for seasonal cleans, new homes, or when you want a total reset. Every surface, appliance, and corner, professionally cleaned.</p>
+        <span class="service-tag">Thorough</span>
+      </div>
+      <div class="service-card">
+        <span class="service-price">From $350</span>
+        <span class="service-emoji">🔑</span>
+        <h3>Move In / Move Out</h3>
+        <p>Moving homes? We make sure the property is left in pristine condition for bond returns or welcoming you into your new place.</p>
+        <span class="service-tag">Bond Clean</span>
+      </div>
+      <div class="service-card">
+        <span class="service-price">From $150</span>
+        <span class="service-emoji">🏢</span>
+        <h3>Commercial Cleaning</h3>
+        <p>Offices, gyms, retail stores, and commercial spaces. Flexible scheduling including before or after hours to minimise disruption.</p>
+        <span class="service-tag">Business</span>
+      </div>
+      <div class="service-card">
+        <span class="service-price">From $100</span>
+        <span class="service-emoji">🛋️</span>
+        <h3>Post-Event Clean</h3>
+        <p>After a party or gathering, let us restore your home to perfection. Quick, efficient, and thorough - so you can relax.</p>
+        <span class="service-tag">Quick</span>
+      </div>
+      <div class="service-card">
+        <span class="service-price">From $100</span>
+        <span class="service-emoji">🪟</span>
+        <h3>Window & Glass</h3>
+        <p>Crystal-clear windows inside and out using streak-free, eco-friendly solutions. Includes frames, sills, and sliding doors.</p>
+        <span class="service-tag">Add-On</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--green-foam);">
+    <div class="why-grid">
+      <div class="why-features">
+        <div class="section-header">
+          <div class="section-tag">All Services Include</div>
+          <h2>The <em>Lumio</em> Standard</h2>
+        </div>
+        <div class="why-feat"><div class="feat-icon">🌿</div><div><h4>Attention to Detail</h4><p>We take pride in delivering thorough, high-quality cleaning services.</p></div></div>
+        <div class="why-feat"><div class="feat-icon">📋</div><div><h4>Thorough Cleaning Process</h4><p>Every service follows a structured approach to provide consistent results.</p></div></div>
+        <div class="why-feat"><div class="feat-icon">⏰</div><div><h4>Punctual & Reliable</h4><p>We arrive on time, every time - and notify you when we're on our way.</p></div></div>
+        <div class="why-feat">
+          <div class="feat-icon">💳</div>
+          <div>
+            <h4>Flexible Payment Options</h4>
+            <p>Payment can be arranged after your cleaning service. Invoices available upon request.</p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="background: var(--green-deep); color: white; border-radius: 24px; padding: 40px;">
+          <h3 style="font-family: 'DM Serif Display', serif; font-size: 26px; margin-bottom: 12px; color: white;">Not sure which service?</h3>
+          <p style="font-size: 15px; opacity: 0.8; margin-bottom: 24px; line-height: 1.6;">Our team will help you find the perfect clean for your home and budget. Get a free quote today.</p>
+          <button class="btn-primary" onclick="showPage('contact')" style="background: var(--green-light); color: var(--green-deep);">Get Free Quote</button>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--green-mid);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;">🎁 First Clean Offer</div>
+          <div style="font-family:'DM Serif Display',serif;font-size:28px;color:var(--green-deep);margin-bottom:8px;">15% Off Your First Clean</div>
+          <p style="font-size:14px;color:var(--text-body);margin-bottom:16px;">Enter your mobile number and email address and we'll contact you to arrange your discounted clean.</p>
+          <input id="discount-phone" type="tel" placeholder="Mobile Number" style="width:100%;padding:12px;margin-bottom:10px;border:1px solid #ddd;border-radius:8px;">
+          <input id="discount-email" type="email" placeholder="Email Address" style="width:100%;padding:12px;margin-bottom:12px;border:1px solid #ddd;border-radius:8px;">
+          <button class="btn-primary" style="width:100%;" onclick="submitDiscountLead()">Claim 15% Discount</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════ BOOK PAGE ══════════ -->
+<div id="page-book" class="page">
+  <section>
+    <div class="section-header">
+      <div class="section-tag">Easy Online Booking</div>
+      <h2>Book Your <em>Clean</em></h2>
+      <p class="section-sub">Fill in the form and we'll confirm your booking within 2 hours. No prepayment required.</p>
+    </div>
+    <div class="book-layout">
+      <div class="book-form-card">
+        <h3 style="font-family:'DM Serif Display',serif; font-size:22px; color:var(--green-deep); margin-bottom:6px;">Select a Service</h3>
+        <p style="font-size:13px;color:var(--text-soft);margin-bottom:20px;">Choose the clean that suits your needs</p>
+        <div class="service-select-grid">
+          <div class="service-option selected" onclick="selectService(this)"><div class="s-icon">🏠</div><div class="s-name">Residential</div></div>
+          <div class="service-option" onclick="selectService(this)"><div class="s-icon">✨</div><div class="s-name">Deep Clean</div></div>
+          <div class="service-option" onclick="selectService(this)"><div class="s-icon">🔑</div><div class="s-name">Move In/Out</div></div>
+          <div class="service-option" onclick="selectService(this)"><div class="s-icon">🏢</div><div class="s-name">Commercial</div></div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="First Name"></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Last Name"></div>
+          <div class="form-group full"><label>Address</label><input type="text" placeholder="123 Green Street, Suburb"></div>
+          <div class="form-group"><label>Phone</label><input type="tel" placeholder="Mobile Number"></div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="Email Address"></div>
+          <div class="form-group"><label>Preferred Date</label><input type="date"></div>
+          <div class="form-group"><label>Preferred Time</label>
+            <select>
+              <option>Morning (8am – 12pm)</option>
+              <option>Afternoon (12pm – 4pm)</option>
+              <option>Any time</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Home Size</label>
+            <select>
+              <option>1 Bedroom</option>
+              <option>2 Bedrooms</option>
+              <option>3 Bedrooms</option>
+              <option>4+ Bedrooms</option>
+            </select>
+          </div>
+          <div class="form-group full"><label>Special Instructions</label><textarea placeholder="Any areas of focus, pets at home, entry instructions..."></textarea></div>
+        </div>
+        <button class="btn-primary form-submit" onclick="submitBook()">Confirm Booking</button>
+        <div class="success-msg" id="book-success">✅ Booking received! We'll confirm within 2 hours.</div>
+      </div>
+
+      <div class="book-info">
+        <div class="price-estimate">
+          <h4>Quick Estimate</h4>
+          <p>Based on average 3-bedroom home</p>
+          <div class="price-row"><span>Residential Clean</span><span>$120</span></div>
+          <div class="price-row"><span>Eco products</span><span>Included</span></div>
+          <div class="price-row"><span>GST</span><span>$12</span></div>
+          <div class="price-row"><span>Total</span><span>$132</span></div>
+        </div>
+        <div class="book-benefit"><div class="book-benefit-icon">💳</div><div><h4>Transparent Pricing</h4><p>Clear, upfront pricing with no hidden fees.</p></div></div>
+        <div class="book-benefit"><div class="book-benefit-icon">📅</div><div><h4>Flexible Scheduling</h4><p>Choose a cleaning time that works for your home or business.</p></div></div>
+        <div class="book-benefit"><div class="book-benefit-icon">✨</div><div><h4>Attention to Detail</h4><p>We take pride in delivering thorough, consistent cleaning services.</p></div></div>
+        <div class="book-benefit"><div class="book-benefit-icon">🏠</div><div><h4>Local Perth Business</h4><p>Proudly serving homes, offices, and commercial spaces across Perth and surrounding areas.</p></div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════ ABOUT PAGE ══════════ -->
+<div id="page-about" class="page">
+  <section>
+    <div class="section-header center">
+      <div class="section-tag">About Lumio Cleaning</div>
+      <h2>Professional Cleaning Services Across <em>Perth</em></h2>
+      <p class="section-sub">Reliable, high-quality cleaning services with a strong focus on professionalism, customer satisfaction, and attention to detail.</p>
+    </div>
+
+    <div class="why-grid">
+      <div style="background:white; border-radius:24px; overflow:hidden; box-shadow: var(--shadow);">
+        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1200&auto=format&fit=crop" alt="Professional cleaning service" style="width:100%; height:100%; object-fit:cover; min-height:420px;">
+      </div>
+
+      <div class="why-features">
+        <div>
+          <h3 style="font-family:'DM Serif Display',serif; font-size:30px; color:var(--green-deep); margin-bottom:18px;">About Lumio Cleaning</h3>
+          <p style="font-size:15px; line-height:1.8; color:var(--text-body); margin-bottom:18px;">At Lumio Cleaning, we believe a clean space creates a healthier, more comfortable environment for families and businesses.</p>
+          <p style="font-size:15px; line-height:1.8; color:var(--text-body); margin-bottom:18px;">Founded in Perth, our mission is to provide reliable, high-quality cleaning services with a strong focus on customer satisfaction, professionalism, and attention to detail.</p>
+          <p style="font-size:15px; line-height:1.8; color:var(--text-body);">Whether you need regular home cleaning, vacate cleaning, or commercial cleaning services, we take pride in delivering results you can see and trust.</p>
+        </div>
+
+        <div class="why-feat">
+          <div class="feat-icon">🎯</div>
+          <div>
+            <h4>Mission Statement</h4>
+            <p>To provide reliable, professional, and affordable cleaning services that exceed customer expectations.</p>
+          </div>
+        </div>
+        <div class="why-feat">
+          <div class="feat-icon">🤝</div>
+          <div>
+            <h4>Professionalism</h4>
+            <p>We arrive on time, communicate clearly, and deliver consistent results.</p>
+          </div>
+        </div>
+        <div class="why-feat">
+          <div class="feat-icon">✔️</div>
+          <div>
+            <h4>Reliability & Quality</h4>
+            <p>You can count on us to provide dependable cleaning services with attention to detail every visit.</p>
+          </div>
+        </div>
+        <div class="why-feat">
+          <div class="feat-icon">⭐</div>
+          <div>
+            <h4>Customer Satisfaction</h4>
+            <p>Your satisfaction is at the centre of everything we do.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════ CONTACT PAGE ══════════ -->
+<div id="page-contact" class="page">
+  <section>
+    <div class="section-header">
+      <div class="section-tag">Get In Touch</div>
+      <h2>We'd Love to <em>Hear</em> From You</h2>
+      <p class="section-sub">Questions, quotes, or feedback - our team typically replies within a few hours.</p>
+    </div>
+    <div class="contact-layout">
+      <div class="contact-info">
+        <div class="contact-block">
+          <div class="contact-block-icon">📍</div>
+          <div><h4>Our Location</h4><p>Perth, Western Australia<br>We service metro Perth and surrounds</p></div>
+        </div>
+        <div class="contact-block">
+          <div class="contact-block-icon">📞</div>
+          <div><h4>Phone</h4><p><a href="tel:0420677321">0420 677 321</a><br><span style="font-size:13px;color:var(--text-soft)">Mon–Sat, 7am – 6pm</span></p></div>
+        </div>
+        <div class="contact-block">
+          <div class="contact-block-icon">✉️</div>
+          <div><h4>Email</h4><p><a href="mailto:info@lumiocleaning.com">info@lumiocleaning.com</a><br><span style="font-size:13px;color:var(--text-soft)">We reply within 2–4 hours</span></p></div>
+        </div>
+        <div class="contact-block">
+          <div class="contact-block-icon">⏰</div>
+          <div><h4>Business Hours</h4><p>Flexible appointments available throughout the week.<br>Contact us to arrange a time that suits your schedule.</p></div>
+        </div>
+        <div style="background: var(--green-deep); border-radius: var(--radius); padding: 28px; color: white;">
+          <div style="font-size:24px; margin-bottom:10px;">💬</div>
+          <h4 style="font-family:'DM Serif Display',serif; font-size:20px; margin-bottom:8px;">Prefer to chat?</h4>
+          <p style="font-size:14px; opacity:0.8; line-height:1.6;">Message us directly on WhatsApp and we'll get back to you as soon as possible.</p>
+          <div style="margin-top:16px;">
+            <a href="https://wa.me/61420677321" target="_blank" rel="noopener" class="btn-primary" style="font-size:13px;padding:10px 18px;text-decoration:none;display:inline-block;">WhatsApp Us</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h3 style="font-family:'DM Serif Display',serif;font-size:24px;color:var(--green-deep);margin-bottom:6px;">Send a Message</h3>
+        <p style="font-size:14px;color:var(--text-soft);margin-bottom:28px;">We'll get back to you as soon as possible.</p>
+        <div class="form-grid">
+          <div class="form-group"><label>First Name</label><input id="contact-firstname" type="text" placeholder="Jane"></div>
+          <div class="form-group"><label>Last Name</label><input id="contact-lastname" type="text" placeholder="Smith"></div>
+          <div class="form-group full"><label>Email Address</label><input id="contact-email" type="email" placeholder="jane@email.com"></div>
+          <div class="form-group full"><label>Subject</label>
+            <select id="contact-subject">
+              <option>Request a Quote</option>
+              <option>General Enquiry</option>
+              <option>Service Question</option>
+              <option>Feedback</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group full"><label>Message</label><textarea id="contact-message" placeholder="Tell us how we can help you..." style="min-height:150px;"></textarea></div>
+        </div>
+        <button class="btn-primary form-submit" onclick="submitContact()">Send Message</button>
+        <div class="success-msg" id="contact-success">✅ Message sent! We'll be in touch within a few hours.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════ REVIEWS PAGE ══════════ -->
+<div id="page-reviews" class="page">
+  <section>
+    <div class="section-header center">
+      <div class="section-tag">Customer Reviews</div>
+      <h2>What Our Clients <em>Say</em></h2>
+      <p class="section-sub">Real reviews from real customers. We're proud of every one of them.</p>
+    </div>
+
+    <div class="rating-hero">
+      <div>
+        <div class="rating-big">4.9</div>
+        <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+        <div class="rating-count">Based on 312 reviews</div>
+      </div>
+      <div class="rating-breakdown">
+        <div class="bar-row">5 ★ <div class="bar-track"><div class="bar-fill" style="width:92%"></div></div> 92%</div>
+        <div class="bar-row">4 ★ <div class="bar-track"><div class="bar-fill" style="width:6%"></div></div> 6%</div>
+        <div class="bar-row">3 ★ <div class="bar-track"><div class="bar-fill" style="width:1%"></div></div> 1%</div>
+        <div class="bar-row">2 ★ <div class="bar-track"><div class="bar-fill" style="width:0.5%"></div></div> 1%</div>
+        <div class="bar-row">1 ★ <div class="bar-track"><div class="bar-fill" style="width:0.5%"></div></div> 0%</div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">Absolutely blown away by the quality! My house hasn't looked this good since we moved in. The team were professional, punctual, and so thorough. Will definitely be a regular.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">SM</div>
+          <div>
+            <div class="reviewer-name">Sarah M.</div>
+            <div class="reviewer-date">May 2025</div>
+            <div class="verified">✓ Verified Customer</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">I specifically chose Lumio for their eco-friendly approach and was not disappointed. The products smell amazing and I love knowing they're safe around my kids. Highly recommend!</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">LT</div>
+          <div>
+            <div class="reviewer-name">Lena T.</div>
+            <div class="reviewer-date">April 2025</div>
+            <div class="verified">✓ Verified Customer</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">Used them for a bond clean and got my full deposit back. The team went above and beyond - even cleaned things I forgot to mention. Absolute legends. 10/10.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">JR</div>
+          <div>
+            <div class="reviewer-name">James R.</div>
+            <div class="reviewer-date">March 2025</div>
+            <div class="verified">✓ Verified Customer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:56px; padding: 48px; background: var(--green-foam); border-radius: 24px;">
+      <h3 style="font-family:'DM Serif Display',serif;font-size:28px;color:var(--green-deep);margin-bottom:12px;">Had a great experience?</h3>
+      <p style="font-size:16px;color:var(--text-body);margin-bottom:28px;">We'd love to hear from you! Share your Lumio experience and help others make their choice.</p>
+      <button class="btn-primary">Leave a Review</button>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════ APPLY MODAL ══════════ -->
+<div id="apply-modal" style="display:none; position:fixed; inset:0; background:rgba(26,58,42,0.5); z-index:200; align-items:center; justify-content:center; padding:24px;">
+  <div style="background:white; border-radius:24px; padding:44px; max-width:520px; width:100%; position:relative; max-height:90vh; overflow-y:auto;">
+    <button onclick="closeModal()" style="position:absolute;top:20px;right:20px;background:var(--green-foam);border:none;border-radius:50%;width:36px;height:36px;font-size:18px;cursor:pointer;color:var(--green-deep);">×</button>
+    <div class="section-tag" style="margin-bottom:12px;">Apply Now</div>
+    <h3 id="modal-title" style="font-family:'DM Serif Display',serif;font-size:26px;color:var(--green-deep);margin-bottom:4px;"></h3>
+    <p style="font-size:14px;color:var(--text-soft);margin-bottom:28px;">Tell us a bit about yourself and we'll be in touch!</p>
+    <div class="form-grid">
+      <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane"></div>
+      <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith"></div>
+      <div class="form-group full"><label>Email</label><input type="email" placeholder="jane@email.com"></div>
+      <div class="form-group full"><label>Phone</label><input type="tel" placeholder="04xx xxx xxx"></div>
+      <div class="form-group full"><label>Tell us about yourself</label><textarea placeholder="Experience, availability, why you'd like to join Lumio..."></textarea></div>
+    </div>
+    <button class="btn-primary" style="width:100%;margin-top:16px;" onclick="submitApply()">Submit Application</button>
+    <div class="success-msg" id="apply-success">✅ Application received! We'll be in touch within 2 business days.</div>
+  </div>
+</div>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo" style="margin-bottom:16px;" onclick="showPage('home')">
+        <div class="logo-leaf">
+          <svg width="24" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 6 C22 6 36 14 36 24 C36 34 22 40 22 40 C22 40 8 34 8 24 C8 14 22 6 22 6 Z" fill="rgba(255,255,255,0.5)"/>
+            <line x1="22" y1="9" x2="22" y2="38" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="22" y1="20" x2="30" y2="25" stroke="white" stroke-width="1" stroke-linecap="round"/>
+            <line x1="22" y1="27" x2="31" y2="30" stroke="white" stroke-width="1" stroke-linecap="round"/>
+            <line x1="22" y1="20" x2="14" y2="25" stroke="white" stroke-width="1" stroke-linecap="round"/>
+            <line x1="22" y1="27" x2="13" y2="30" stroke="white" stroke-width="1" stroke-linecap="round"/>
+            <path d="M22 32 C22 32 18 28 18 25.5 C18 23.1 19.8 21 22 21 C24.2 21 26 23.1 26 25.5 C26 28 22 32 22 32 Z" fill="white" opacity="0.9"/>
+          </svg>
+        </div>
+        <div class="logo-text-group">
+          <span class="logo-text-top">Lumio</span>
+          <span class="logo-text-bottom">Cleaning</span>
+        </div>
+      </div>
+      <p>Professional cleaning services for homes and businesses across Perth, Western Australia.</p>
+      <div style="margin-top:20px;">
+        <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; opacity:0.5; margin-bottom:12px;">Follow Us</div>
+        <div style="display:flex; gap:10px;">
+          <a href="https://www.facebook.com/profile.php?id=61590433301017&sk=about" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:rgba(116,198,157,0.15); border:1px solid rgba(116,198,157,0.3); border-radius:50px; padding:8px 16px; font-size:13px; font-weight:600; color:var(--green-light); text-decoration:none; transition:background 0.2s;" onmouseover="this.style.background='rgba(116,198,157,0.25)'" onmouseout="this.style.background='rgba(116,198,157,0.15)'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </a>
+          <a href="https://www.instagram.com/lumiocleaning/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:rgba(116,198,157,0.15); border:1px solid rgba(116,198,157,0.3); border-radius:50px; padding:8px 16px; font-size:13px; font-weight:600; color:var(--green-light); text-decoration:none; transition:background 0.2s;" onmouseover="this.style.background='rgba(116,198,157,0.25)'" onmouseout="this.style.background='rgba(116,198,157,0.15)'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a onclick="showPage('services')">Residential</a></li>
+        <li><a onclick="showPage('services')">Deep Clean</a></li>
+        <li><a onclick="showPage('services')">Move In/Out</a></li>
+        <li><a onclick="showPage('services')">Commercial</a></li>
+        <li><a onclick="showPage('services')">Windows</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+  <h5>Company</h5>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About Us</a></li>
+    <li><a href="/contact">Contact Us</a></li>
+    <li><a href="policy.html">Policy</a></li> <!-- New Line Added -->
+  </ul>
+</div>
+    </div>
+    <div class="footer-col">
+      <h5>Get Started</h5>
+      <ul>
+        <li><a onclick="showPage('book')">Book a Clean</a></li>
+        <li><a onclick="showPage('contact')">Free Quote</a></li>
+        <li><a href="tel:0420677321">0420 677 321</a></li>
+        <li><a href="mailto:info@lumiocleaning.com">Email Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Lumio Cleaning. All rights reserved.</span>
+    <span>Perth, Western Australia · </span>
+    <span>Privacy Policy · Terms of Service</span>
+  </div>
+</footer>
+
+<!-- ── SCRIPTS LOAD SECTION ── -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS safely
+  emailjs.init({
+    publicKey: "XYqjn-ddGsfnuf2Zf"
+  });
+
+  // ── PAGE NAVIGATION ──
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    
+    const targetPage = document.getElementById('page-' + id);
+    if(targetPage) {
+      targetPage.classList.add('active');
+    }
+    
+    const navEl = document.getElementById('nav-' + id);
+    if (navEl) navEl.classList.add('active');
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('navLinks').classList.remove('open');
+  }
+
+  // ── HAMBURGER ──
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // ── SCROLL NAV SHADOW ──
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  // ── SERVICE SELECT ──
+  function selectService(el) {
+    document.querySelectorAll('.service-option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+
+  // ── NEW EMAILJS CONTACT FORM ──
+  function submitContact() {
+    const firstName = document.getElementById("contact-firstname").value;
+    const lastName  = document.getElementById("contact-lastname").value;
+    const email     = document.getElementById("contact-email").value;
+    const subject   = document.getElementById("contact-subject").value;
+    const message   = document.getElementById("contact-message").value;
+
+    emailjs.send(
+      "service_giok60r",
+      "template_142d6nl",
+      {
+        from_name: firstName + " " + lastName,
+        reply_to: email,
+        subject: subject,
+        message: message
+      }
+    )
+    .then(() => {
+      const successMessage = document.getElementById("contact-success");
+      successMessage.classList.add("show");
+
+      setTimeout(() => {
+        successMessage.classList.remove("show");
+      }, 5000);
+
+      document.getElementById("contact-firstname").value = "";
+      document.getElementById("contact-lastname").value = "";
+      document.getElementById("contact-email").value = "";
+      document.getElementById("contact-subject").value = "Request a Quote";
+      document.getElementById("contact-message").value = "";
+    })
+    .catch((error) => {
+      alert("Failed to send message. Please try again.");
+      console.error("EmailJS Error:", error);
+    });
+  }
+
+  // ── ORIGINAL BOOKING FORM SUBMIT ──
+  function submitBook() {
+    const inputs = document.querySelectorAll('#page-book input, #page-book select, #page-book textarea');
+    const service = document.querySelector('#page-book .service-option.selected .s-name');
+    let details = `Booking Request - Lumio Cleaning\n\nService: ${service ? service.textContent : 'Not selected'}\n`;
+    
+    inputs.forEach(el => { 
+      if(el.value) details += `${el.placeholder || el.name || el.type}: ${el.value}\n`; 
+    });
+    
+    const body = encodeURIComponent(details);
+    window.location.href = `mailto:info@lumiocleaning.com?subject=${encodeURIComponent('[Lumio Cleaning] New Booking Request')}&body=${body}`;
+    
+    const s = document.getElementById('book-success');
+    s.classList.add('show');
+    setTimeout(() => s.classList.remove('show'), 5000);
+  }
+
+  // ── JOB APPLICATION FORM ──
+  function submitApply() {
+    const s = document.getElementById('apply-success');
+    s.classList.add('show');
+    setTimeout(() => { s.classList.remove('show'); closeModal(); }, 4000);
+  }
+
+  // ── CAREER MODAL CONTROLS ──
+  function showApplyModal(role) {
+    document.getElementById('modal-title').textContent = role;
+    document.getElementById('apply-modal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('apply-modal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  // Close modal if user clicks outside the box
+  document.getElementById('apply-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // ── 15% DISCOUNT FORM ──
+  function submitDiscountLead() {
+    const phone = document.getElementById('discount-phone').value;
+    const email = document.getElementById('discount-email').value;
+    const body = encodeURIComponent(`Mobile Number: ${phone}\nEmail Address: ${email}`);
+    window.location.href = `mailto:info@lumiocleaning.com?subject=${encodeURIComponent('Lumio 15% Discount Customer')}&body=${body}`;
+  }
+</script>
+</body>
+</html>
