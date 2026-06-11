@@ -7,12 +7,45 @@
 <!-- Include the same fonts and CSS as your main page -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FK6M8JX1RD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FK6M8JX1RD');
+</script>
+
 <style>
-  /* Paste the entire <style> block from your original file here to ensure theme consistency */
-  /* (I have omitted it for brevity, but remember to include it in the new file) */
-</style>
-</head>
-<body>
+  :root {
+    --green-deep: #1a3a2a;
+    --green-mid: #2d6a4f;
+    --green-fresh: #40916c;
+    --green-light: #74c69d;
+    --green-pale: #b7e4c7;
+    --green-mist: #d8f3dc;
+    --green-foam: #f0faf3;
+    --white: #ffffff;
+    --cream: #fafcf8;
+    --charcoal: #1e2d26;
+    --text-body: #3b5249;
+    --text-soft: #6b8f7a;
+    --accent: #52b788;
+    --gold: #c8a96e;
+    --radius: 18px;
+    --shadow: 0 8px 40px rgba(26,58,42,0.10);
+    --shadow-sm: 0 2px 12px rgba(26,58,42,0.08);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
 
 <!-- NAV -->
 <nav id="navbar">
