@@ -269,7 +269,7 @@
 
 <!-- NAV -->
 <nav id="navbar">
-  <a class="nav-logo" href="index.html">
+  <a class="nav-logo" href="index">
     <div class="logo-leaf">
       <svg width="24" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M22 4 C22 4 38 12 38 24 C38 36 22 42 22 42 C22 42 6 36 6 24 C6 12 22 4 22 4 Z" fill="rgba(255,255,255,0.25)"/>
@@ -288,11 +288,11 @@
     </div>
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="index.html" id="nav-home">Home</a></li>
-    <li><a href="services.html" class="active" id="nav-services">Services</a></li>
-    <li><a href="about.html" id="nav-about">About Us</a></li>
-    <li><a href="contact.html" id="nav-contact">Contact</a></li>
-    <li><a href="book.html" id="nav-book" class="nav-cta">Book Now</a></li>
+    <li><a href="index" id="nav-home">Home</a></li>
+    <li><a href="services" class="active" id="nav-services">Services</a></li>
+    <li><a href="about" id="nav-about">About Us</a></li>
+    <li><a href="contact" id="nav-contact">Contact</a></li>
+    <li><a href="book" id="nav-book" class="nav-cta">Book Now</a></li>
   </ul>
   <div class="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -375,7 +375,7 @@
         <div style="background: var(--green-deep); color: white; border-radius: 24px; padding: 40px;">
           <h3 style="font-family: 'DM Serif Display', serif; font-size: 26px; margin-bottom: 12px; color: white;">Not sure which service?</h3>
           <p style="font-size: 15px; opacity: 0.8; margin-bottom: 24px; line-height: 1.6;">Our team will help you find the perfect clean for your home and budget. Get a free quote today.</p>
-          <a href="contact.html" class="btn-primary" style="background: var(--green-light); color: var(--green-deep); text-decoration: none; display: inline-block; text-align: center;">Get Free Quote</a>
+          <a href="contact" class="btn-primary" style="background: var(--green-light); color: var(--green-deep); text-decoration: none; display: inline-block; text-align: center;">Get Free Quote</a>
         </div>
         <div>
           <div style="font-size:13px;font-weight:700;color:var(--green-mid);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;">🎁 First Clean Offer</div>
@@ -394,7 +394,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <a class="nav-logo" style="margin-bottom:16px;" href="index.html">
+      <a class="nav-logo" style="margin-bottom:16px;" href="index">
         <div class="logo-leaf">
           <svg width="24" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M22 6 C22 6 36 14 36 24 C36 34 22 40 22 40 C22 40 8 34 8 24 C8 14 22 6 22 6 Z" fill="rgba(255,255,255,0.5)"/>
@@ -429,27 +429,27 @@
     <div class="footer-col">
       <h5>Services</h5>
       <ul>
-        <li><a href="services.html">Residential</a></li>
-        <li><a href="services.html">Deep Clean</a></li>
-        <li><a href="services.html">Move In/Out</a></li>
-        <li><a href="services.html">Commercial</a></li>
-        <li><a href="services.html">Windows</a></li>
+        <li><a href="services">Residential</a></li>
+        <li><a href="services">Deep Clean</a></li>
+        <li><a href="services">Move In/Out</a></li>
+        <li><a href="services">Commercial</a></li>
+        <li><a href="services">Windows</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>Company</h5>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="policy.html">Policy</a></li>
+        <li><a href="index">Home</a></li>
+        <li><a href="about">About Us</a></li>
+        <li><a href="contact">Contact Us</a></li>
+        <li><a href="policy">Policy</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>Get Started</h5>
       <ul>
-        <li><a href="book.html">Book a Clean</a></li>
-        <li><a href="contact.html">Free Quote</a></li>
+        <li><a href="book">Book a Clean</a></li>
+        <li><a href="contact">Free Quote</a></li>
         <li><a href="tel:0420677321">0420 677 321</a></li>
         <li><a href="mailto:info@lumiocleaning.com">Email Us</a></li>
       </ul>
@@ -462,25 +462,7 @@
   </div>
 </footer>
 
-<!-- ── SCRIPTS SECTION ── -->
-<script>
-  // ── HAMBURGER ──
-  function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('open');
-  }
-
-  // ── SCROLL NAV SHADOW ──
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
-  });
-
-  // ── 15% DISCOUNT FORM ──
-  function submitDiscountLead() {
-    const phone = document.getElementById('discount-phone').value;
-    const email = document.getElementById('discount-email').value;
-    const body = encodeURIComponent(`Mobile Number: ${phone}\nEmail Address: ${email}`);
-    window.location.href = `mailto:info@lumiocleaning.com?subject=${encodeURIComponent('Lumio 15% Discount Customer')}&body=${body}`;
-  }
-</script>
+<!-- LINK TO MAIN EXTERNAL SCRIPT -->
+<script src="main.js"></script>
 </body>
 </html>
