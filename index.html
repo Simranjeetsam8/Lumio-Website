@@ -30,19 +30,11 @@
     --charcoal: #1e2d26;
     --text-body: #3b5249;
     --text-soft: #6b8f7a;
-   --accent: #52b788;
+    --accent: #52b788;
     --gold: #c8a96e;
     --radius: 18px;
     --shadow: 0 8px 40px rgba(26,58,42,0.10);
     --shadow-sm: 0 2px 12px rgba(26,58,42,0.08);
-  }
-
-  /* ── ADDED TO KEEP ALL SECTIONS VISIBLE AND SPACED ── */
-  .page {
-    display: block !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    padding-top: 100px;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -119,6 +111,9 @@
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
   .hamburger span { width: 24px; height: 2px; background: var(--green-deep); border-radius: 2px; transition: all 0.3s; }
 
+  /* ── PAGES ── */
+  .page { display: none; padding-top: 80px; min-height: 100vh; }
+  .page.active { display: block; }
 
   /* ── HERO ── */
   .hero {
@@ -641,12 +636,12 @@
     </div>
   </a>
   <ul class="nav-links" id="navLinks">
-  <li><a href="index.html" id="nav-home" class="active">Home</a></li>
-  <li><a href="services.html" id="nav-services">Services</a></li>
-  <li><a href="about.html" id="nav-about">About Us</a></li>     
-  <li><a href="contact.html" id="nav-contact">Contact</a></li> 
-  <li><a href="book.html" id="nav-book" class="nav-cta">Book Now</a></li> 
-</ul>
+    <li><a onclick="showPage('home')" class="active" id="nav-home">Home</a></li>
+    <li><a onclick="showPage('services')" id="nav-services">Services</a></li>
+    <li><a onclick="showPage('about')" id="nav-about">About Us</a></li>
+    <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+    <li><a onclick="showPage('book')" id="nav-book" class="nav-cta">Book Now</a></li>
+  </ul>
   <div class="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </div>
@@ -660,7 +655,8 @@
       <h1>Perth's Cleaning Experts <br><em>Trusted, Thorough</em> & Affordable.</h1>
       <p class="hero-sub">Lumio Cleaning brings a brighter clean to homes, offices, and commercial spaces across Perth, WA. Experienced, reliable, and committed to quality every time.</p>
       <div class="hero-buttons">
-<a href="#page-book" class="btn-primary" style="text-decoration:none; display:inline-block;">Book a Clean</a>        <button class="btn-secondary" onclick="showPage('services')">Our Services →</button>
+        <button class="btn-primary" onclick="showPage('book')">Book a Clean</button>
+        <button class="btn-secondary" onclick="showPage('services')">Our Services →</button>
       </div>
       <div class="hero-stats">
         <div><div class="stat-label">✓ Locally Owned</div></div>
@@ -783,13 +779,65 @@
     <h2 style="margin-bottom:16px;">Ready for a <em>Fresher</em> Home?</h2>
     <p style="font-size:17px; color:var(--text-body); max-width:500px; margin: 0 auto 36px;">Book your first clean and experience the Lumio difference - eco-friendly, professional, and stress-free.</p>
     <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-<a href="#page-book" class="btn-primary" style="text-decoration:none; display:inline-block;">Book a Clean</a>      <button class="btn-secondary" onclick="showPage('contact')">Get in Touch</button>
+      <button class="btn-primary" onclick="showPage('book')">Book a Clean</button>
+      <button class="btn-secondary" onclick="showPage('contact')">Get in Touch</button>
     </div>
   </section>
 </div>
 
 <!-- ══════════ SERVICES PAGE ══════════ -->
-
+<div id="page-services" class="page">
+  <section>
+    <div class="section-header">
+      <div class="section-tag">What We Clean</div>
+      <h2>Services Designed <em>For You</em></h2>
+      <p class="section-sub">Every clean is customised to your space, your schedule, and your lifestyle.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-price">From $120</span>
+        <span class="service-emoji">🏠</span>
+        <h3>Residential Cleaning</h3>
+        <p>Regular home cleaning that keeps your space consistently fresh. We handle all rooms, surfaces, bathrooms, and kitchens. Available weekly, fortnightly, or monthly.</p>
+        <span class="service-tag">Most Popular</span>
+      </div>
+      <div class="service-card">
+        <span class="service-price">From $280</span>
+        <span class="service-emoji">✨</span>
+        <h3>Deep Clean</h3>
+        <p>Our most thorough service - perfect for seasonal cleans, new homes, or when you want a total reset. Every surface, appliance, and corner, professionally cleaned.</p>
+        <span class="service-tag">Thorough</span>
+      </div>
+      <div class="service-card">
+        <span class="service-price">From $350</span>
+        <span class="service-emoji">🔑</span>
+        <h3>Move In / Move Out</h3>
+        <p>Moving homes? We make sure the property is left in pristine condition for bond returns or welcoming you into your new place.</p>
+        <span class="service-tag">Bond Clean</span>
+      </div>
+      <div class="service-card">
+        <span class="service-price">From $150</span>
+        <span class="service-emoji">🏢</span>
+        <h3>Commercial Cleaning</h3>
+        <p>Offices, gyms, retail stores, and commercial spaces. Flexible scheduling including before or after hours to minimise disruption.</p>
+        <span class="service-tag">Business</span>
+      </div>
+      <div class="service-card">
+        <span class="service-price">From $100</span>
+        <span class="service-emoji">🛋️</span>
+        <h3>Post-Event Clean</h3>
+        <p>After a party or gathering, let us restore your home to perfection. Quick, efficient, and thorough - so you can relax.</p>
+        <span class="service-tag">Quick</span>
+      </div>
+      <div class="service-card">
+        <span class="service-price">From $100</span>
+        <span class="service-emoji">🪟</span>
+        <h3>Window & Glass</h3>
+        <p>Crystal-clear windows inside and out using streak-free, eco-friendly solutions. Includes frames, sills, and sliding doors.</p>
+        <span class="service-tag">Add-On</span>
+      </div>
+    </div>
+  </section>
 
   <section style="background: var(--green-foam);">
     <div class="why-grid">
@@ -1103,7 +1151,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <a class="nav-logo" style="margin-bottom:16px;" href="index">
+      <div class="nav-logo" style="margin-bottom:16px;" onclick="showPage('home')">
         <div class="logo-leaf">
           <svg width="24" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M22 6 C22 6 36 14 36 24 C36 34 22 40 22 40 C22 40 8 34 8 24 C8 14 22 6 22 6 Z" fill="rgba(255,255,255,0.5)"/>
@@ -1119,7 +1167,7 @@
           <span class="logo-text-top">Lumio</span>
           <span class="logo-text-bottom">Cleaning</span>
         </div>
-      </a>
+      </div>
       <p>Professional cleaning services for homes and businesses across Perth, Western Australia.</p>
       <div style="margin-top:20px;">
         <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; opacity:0.5; margin-bottom:12px;">Follow Us</div>
@@ -1138,27 +1186,26 @@
     <div class="footer-col">
       <h5>Services</h5>
       <ul>
-        <li><a href="services">Residential</a></li>
-        <li><a href="services">Deep Clean</a></li>
-        <li><a href="services">Move In/Out</a></li>
-        <li><a href="services">Commercial</a></li>
-        <li><a href="services">Windows</a></li>
+        <li><a onclick="showPage('services')">Residential</a></li>
+        <li><a onclick="showPage('services')">Deep Clean</a></li>
+        <li><a onclick="showPage('services')">Move In/Out</a></li>
+        <li><a onclick="showPage('services')">Commercial</a></li>
+        <li><a onclick="showPage('services')">Windows</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>Company</h5>
       <ul>
-        <li><a href="index">Home</a></li>
-        <li><a href="about">About Us</a></li>
-        <li><a href="contact">Contact Us</a></li>
-        <li><a href="policy">Policy</a></li>
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('about')">About Us</a></li>
+        <li><a onclick="showPage('contact')">Contact Us</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>Get Started</h5>
       <ul>
-        <li><a href="book">Book a Clean</a></li>
-        <li><a href="contact">Free Quote</a></li>
+        <li><a onclick="showPage('book')">Book a Clean</a></li>
+        <li><a onclick="showPage('contact')">Free Quote</a></li>
         <li><a href="tel:0420677321">0420 677 321</a></li>
         <li><a href="mailto:info@lumiocleaning.com">Email Us</a></li>
       </ul>
@@ -1171,7 +1218,134 @@
   </div>
 </footer>
 
-<!-- LINK TO MAIN EXTERNAL SCRIPT -->
-<script src="main.js"></script>
+<!-- ── SCRIPTS LOAD SECTION ── -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS safely
+  emailjs.init({
+    publicKey: "XYqjn-ddGsfnuf2Zf"
+  });
+
+  // ── PAGE NAVIGATION ──
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    
+    const targetPage = document.getElementById('page-' + id);
+    if(targetPage) {
+      targetPage.classList.add('active');
+    }
+    
+    const navEl = document.getElementById('nav-' + id);
+    if (navEl) navEl.classList.add('active');
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('navLinks').classList.remove('open');
+  }
+
+  // ── HAMBURGER ──
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // ── SCROLL NAV SHADOW ──
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  // ── SERVICE SELECT ──
+  function selectService(el) {
+    document.querySelectorAll('.service-option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+
+  // ── NEW EMAILJS CONTACT FORM ──
+  function submitContact() {
+    const firstName = document.getElementById("contact-firstname").value;
+    const lastName  = document.getElementById("contact-lastname").value;
+    const email     = document.getElementById("contact-email").value;
+    const subject   = document.getElementById("contact-subject").value;
+    const message   = document.getElementById("contact-message").value;
+
+    emailjs.send(
+      "service_giok60r",
+      "template_142d6nl",
+      {
+        from_name: firstName + " " + lastName,
+        reply_to: email,
+        subject: subject,
+        message: message
+      }
+    )
+    .then(() => {
+      const successMessage = document.getElementById("contact-success");
+      successMessage.classList.add("show");
+
+      setTimeout(() => {
+        successMessage.classList.remove("show");
+      }, 5000);
+
+      document.getElementById("contact-firstname").value = "";
+      document.getElementById("contact-lastname").value = "";
+      document.getElementById("contact-email").value = "";
+      document.getElementById("contact-subject").value = "Request a Quote";
+      document.getElementById("contact-message").value = "";
+    })
+    .catch((error) => {
+      alert("Failed to send message. Please try again.");
+      console.error("EmailJS Error:", error);
+    });
+  }
+
+  // ── ORIGINAL BOOKING FORM SUBMIT ──
+  function submitBook() {
+    const inputs = document.querySelectorAll('#page-book input, #page-book select, #page-book textarea');
+    const service = document.querySelector('#page-book .service-option.selected .s-name');
+    let details = `Booking Request - Lumio Cleaning\n\nService: ${service ? service.textContent : 'Not selected'}\n`;
+    
+    inputs.forEach(el => { 
+      if(el.value) details += `${el.placeholder || el.name || el.type}: ${el.value}\n`; 
+    });
+    
+    const body = encodeURIComponent(details);
+    window.location.href = `mailto:info@lumiocleaning.com?subject=${encodeURIComponent('[Lumio Cleaning] New Booking Request')}&body=${body}`;
+    
+    const s = document.getElementById('book-success');
+    s.classList.add('show');
+    setTimeout(() => s.classList.remove('show'), 5000);
+  }
+
+  // ── JOB APPLICATION FORM ──
+  function submitApply() {
+    const s = document.getElementById('apply-success');
+    s.classList.add('show');
+    setTimeout(() => { s.classList.remove('show'); closeModal(); }, 4000);
+  }
+
+  // ── CAREER MODAL CONTROLS ──
+  function showApplyModal(role) {
+    document.getElementById('modal-title').textContent = role;
+    document.getElementById('apply-modal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('apply-modal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  // Close modal if user clicks outside the box
+  document.getElementById('apply-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // ── 15% DISCOUNT FORM ──
+  function submitDiscountLead() {
+    const phone = document.getElementById('discount-phone').value;
+    const email = document.getElementById('discount-email').value;
+    const body = encodeURIComponent(`Mobile Number: ${phone}\nEmail Address: ${email}`);
+    window.location.href = `mailto:info@lumiocleaning.com?subject=${encodeURIComponent('Lumio 15% Discount Customer')}&body=${body}`;
+  }
+</script>
 </body>
 </html>
