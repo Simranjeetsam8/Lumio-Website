@@ -1103,7 +1103,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="nav-logo" style="margin-bottom:16px;" onclick="showPage('home')">
+      <a class="nav-logo" style="margin-bottom:16px;" href="index">
         <div class="logo-leaf">
           <svg width="24" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M22 6 C22 6 36 14 36 24 C36 34 22 40 22 40 C22 40 8 34 8 24 C8 14 22 6 22 6 Z" fill="rgba(255,255,255,0.5)"/>
@@ -1119,7 +1119,7 @@
           <span class="logo-text-top">Lumio</span>
           <span class="logo-text-bottom">Cleaning</span>
         </div>
-      </div>
+      </a>
       <p>Professional cleaning services for homes and businesses across Perth, Western Australia.</p>
       <div style="margin-top:20px;">
         <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; opacity:0.5; margin-bottom:12px;">Follow Us</div>
@@ -1138,28 +1138,27 @@
     <div class="footer-col">
       <h5>Services</h5>
       <ul>
-        <li><a onclick="showPage('services')">Residential</a></li>
-        <li><a onclick="showPage('services')">Deep Clean</a></li>
-        <li><a onclick="showPage('services')">Move In/Out</a></li>
-        <li><a onclick="showPage('services')">Commercial</a></li>
-        <li><a onclick="showPage('services')">Windows</a></li>
+        <li><a href="services">Residential</a></li>
+        <li><a href="services">Deep Clean</a></li>
+        <li><a href="services">Move In/Out</a></li>
+        <li><a href="services">Commercial</a></li>
+        <li><a href="services">Windows</a></li>
       </ul>
     </div>
     <div class="footer-col">
-  <h5>Company</h5>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/about">About Us</a></li>
-    <li><a href="/contact">Contact Us</a></li>
-    <li><a href="policy.html">Policy</a></li> <!-- New Line Added -->
-  </ul>
-</div>
+      <h5>Company</h5>
+      <ul>
+        <li><a href="index">Home</a></li>
+        <li><a href="about">About Us</a></li>
+        <li><a href="contact">Contact Us</a></li>
+        <li><a href="policy">Policy</a></li>
+      </ul>
     </div>
     <div class="footer-col">
       <h5>Get Started</h5>
       <ul>
-        <li><a onclick="showPage('book')">Book a Clean</a></li>
-        <li><a onclick="showPage('contact')">Free Quote</a></li>
+        <li><a href="book">Book a Clean</a></li>
+        <li><a href="contact">Free Quote</a></li>
         <li><a href="tel:0420677321">0420 677 321</a></li>
         <li><a href="mailto:info@lumiocleaning.com">Email Us</a></li>
       </ul>
@@ -1172,9 +1171,7 @@
   </div>
 </footer>
 
-<!-- ── SCRIPTS LOAD SECTION ── -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
+<!-- LINK TO MAIN EXTERNAL SCRIPT -->
 <script src="main.js"></script>
 </body>
 </html>
