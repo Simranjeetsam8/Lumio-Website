@@ -857,14 +857,14 @@
         </div>
 
         <div class="form-grid">
-          <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane"></div>
-          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith"></div>
+          <div class="form-group"><label>First Name</label><input id="contact-firstname" type="text" placeholder="Jane">
+          <div class="form-group"><label>Last Name</label><input id="contact-lastname" type="text" placeholder="Smith">
           <div class="form-group full"><label>Address</label><input type="text" placeholder="123 Green Street, Suburb"></div>
           <div class="form-group"><label>Phone</label><input type="tel" placeholder="04xx xxx xxx"></div>
-          <div class="form-group"><label>Email</label><input type="email" placeholder="jane@email.com"></div>
+          <div class="form-group"><label>Email</label><input id="contact-email" type="email" placeholder="jane@email.com">
           <div class="form-group"><label>Preferred Date</label><input type="date"></div>
           <div class="form-group"><label>Preferred Time</label>
-            <select>
+            <select id="contact-subject">
               <option>Morning (8am – 12pm)</option>
               <option>Afternoon (12pm – 4pm)</option>
               <option>Any time</option>
@@ -1021,7 +1021,7 @@
               <option>Other</option>
             </select>
           </div>
-          <div class="form-group full"><label>Message</label><textarea placeholder="Tell us how we can help you..." style="min-height:150px;"></textarea></div>
+          <div class="form-group full"><label>Message</label><textarea id="contact-message" placeholder="Tell us how we can help you..." style="min-height:150px;"></textarea></div>
         </div>
         <button class="btn-primary form-submit" onclick="submitContact()">Send Message</button>
         <div class="success-msg" id="contact-success">✅ Message sent! We'll be in touch within a few hours.</div>
@@ -1254,59 +1254,76 @@
   }
 
   // ── FORM SUBMISSIONS ──
-  function submitBook() {
-    const inputs = document.querySelectorAll('#page-book input, #page-book select, #page-book textarea');
-    const service = document.querySelector('#page-book .service-option.selected .s-name');
-    let details = `Booking Request - Lumio Cleaning\n\nService: ${service ? service.textContent : 'Not selected'}\n`;
-    inputs.forEach(el => { if(el.value) details += `${el.placeholder || el.name || el.type}: ${el.value}\n`; });
-    const body = encodeURIComponent(details);
-    window.location.href = `mailto:info@lumiocleaning.com?subject=${encodeURIComponent('[Lumio Cleaning] New Booking Request')}&body=${body}`;
-    const s = document.getElementById('book-success');
-    s.classList.add('show');
-    setTimeout(() => s.classList.remove('show'), 5000);
-  }
-  function submitContact() {
-    const nameEl = document.querySelector('#page-contact input[type="text"]');
-    const emailEl = document.querySelector('#page-contact input[type="email"]');
-    const subjectEl = document.querySelector('#page-contact select');
-    const msgEl = document.querySelector('#page-contact textarea');
-    const name = nameEl ? nameEl.value : '';
-    const email = emailEl ? emailEl.value : '';
-    const subject = subjectEl ? subjectEl.value : 'Website Enquiry';
-    const msg = msgEl ? msgEl.value : '';
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${msg}`);
-    const subjectEnc = encodeURIComponent(`[Lumio Cleaning Website] ${subject}`);
-    window.location.href = `mailto:info@lumiocleaning.com?subject=${subjectEnc}&body=${body}`;
-    const s = document.getElementById('contact-success');
-    s.classList.add('show');
-    setTimeout(() => s.classList.remove('show'), 5000);
-  }
-  function submitApply() {
-    const s = document.getElementById('apply-success');
-    s.classList.add('show');
-    setTimeout(() => { s.classList.remove('show'); closeModal(); }, 4000);
-  }
+ <script>
+// ── NEW EMAILJS CONTACT FORM ──
+function submitContact() {
+  const firstName = document.getElementById("contact-firstname").value;
+  const lastName  = document.getElementById("contact-lastname").value;
+  const email     = document.getElementById("contact-email").value;
+  const subject   = document.getElementById("contact-subject").value;
+  const message   = document.getElementById("contact-message").value;
 
-  // ── CAREER MODAL ──
-  function showApplyModal(role) {
-    document.getElementById('modal-title').textContent = role;
-    document.getElementById('apply-modal').style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal() {
-    document.getElementById('apply-modal').style.display = 'none';
-    document.body.style.overflow = '';
-  }
-  document.getElementById('apply-modal').addEventListener('click', function(e) {
-    if (e.target === this) closeModal();
+  emailjs.send(
+    "service_giok60r",
+    "template_142d6nl",
+    {
+      from_name: firstName + " " + lastName,
+      reply_to: email,
+      subject: subject,
+      message: message
+    }
+  )
+  .then(() => {
+    const successMessage = document.getElementById("contact-success");
+    successMessage.classList.add("show");
+
+    setTimeout(() => {
+      successMessage.classList.remove("show");
+    }, 5000);
+
+    document.getElementById("contact-firstname").value = "";
+    document.getElementById("contact-lastname").value = "";
+    document.getElementById("contact-email").value = "";
+    document.getElementById("contact-subject").value = "";
+    document.getElementById("contact-message").value = "";
+  })
+  .catch((error) => {
+    alert("Failed to send message. Please try again.");
+    console.error("EmailJS Error:", error);
   });
+}
 
-  function submitDiscountLead() {
-    const phone = document.getElementById('discount-phone').value;
-    const email = document.getElementById('discount-email').value;
-    const body = encodeURIComponent(`Mobile Number: ${phone}\nEmail Address: ${email}`);
-    window.location.href = `mailto:info@lumiocleaning.com?subject=${encodeURIComponent('Lumio 15% Discount Customer')}&body=${body}`;
-  }
+// ── JOB APPLICATION FORM ──
+function submitApply() {
+  const s = document.getElementById('apply-success');
+  s.classList.add('show');
+  setTimeout(() => { s.classList.remove('show'); closeModal(); }, 4000);
+}
+
+// ── CAREER MODAL CONTROLS ──
+function showApplyModal(role) {
+  document.getElementById('modal-title').textContent = role;
+  document.getElementById('apply-modal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('apply-modal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// Close modal if user clicks outside the box
+document.getElementById('apply-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// ── 15% DISCOUNT FORM ──
+function submitDiscountLead() {
+  const phone = document.getElementById('discount-phone').value;
+  const email = document.getElementById('discount-email').value;
+  const body = encodeURIComponent(`Mobile Number: ${phone}\nEmail Address: ${email}`);
+  window.location.href = `mailto:######################?subject=${encodeURIComponent('Lumio 15% Discount Customer')}&body=${body}`;
+}
 </script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
