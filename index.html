@@ -481,10 +481,28 @@
   .footer-col a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; cursor: pointer; transition: color 0.2s; }
   .footer-col a:hover { color: var(--green-light); }
   .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.1); padding-top: 28px;
-    display: flex; justify-content: space-between; align-items: center;
-    font-size: 13px; opacity: 0.5; flex-wrap: wrap; gap: 12px;
+  border-top: 1px solid rgba(255,255,255,0.1); 
+  padding: 28px 20px 20px 20px; /* Added 20px safety padding to the left, right, and bottom */
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  font-size: 13px; 
+  opacity: 0.5; 
+  flex-wrap: wrap; 
+  gap: 12px;
+  box-sizing: border-box;        /* Strictly restricts the width so it cannot overflow */
+  width: 100%;
+}
+
+/* This automatically fixes the layout on mobile screens */
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;      /* Stacks the text lines neatly on top of each other */
+    justify-content: center;     /* Centers the layout group */
+    text-align: center;          /* Centers the text inside */
+    gap: 10px;
   }
+}
 
   /* Footer context adjustments for branding text colors */
   footer .logo-text-top { color: var(--white); }
