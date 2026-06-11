@@ -1,27 +1,18 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Lumio Cleaning - Eco-Friendly Cleaning Services</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FK6M8JX1RD"></script>
-
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-FK6M8JX1RD');
 </script>
 
@@ -47,9 +38,7 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'Nunito', sans-serif;
     background: var(--cream);
@@ -70,24 +59,34 @@
   nav.scrolled { box-shadow: 0 4px 24px rgba(26,58,42,0.10); }
 
   .nav-logo {
-    display: flex; align-items: center; gap: 10px; cursor: pointer;
+    display: flex; align-items: center; gap: 12px; cursor: pointer;
     text-decoration: none;
   }
   .logo-leaf {
-    width: 38px; height: 38px;
+    width: 42px; height: 42px;
     background: linear-gradient(135deg, var(--green-fresh), var(--green-light));
-    border-radius: 50% 50% 50% 10%;
+    border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-size: 18px; color: white;
-    box-shadow: 0 4px 12px rgba(64,145,108,0.35);
+    box-shadow: 0 4px 12px rgba(64,145,108,0.25);
     flex-shrink: 0;
   }
-  .logo-text {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px; color: var(--green-deep);
-    letter-spacing: -0.3px;
+  .logo-text-group {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
   }
-  .logo-text span { color: var(--green-fresh); }
+  .logo-text-top {
+    font-family: 'DM Serif Display', serif;
+    font-size: 25px; color: var(--green-deep);
+    font-weight: 700;
+    letter-spacing: -0.2px;
+  }
+  .logo-text-bottom {
+    font-family: 'Nunito', sans-serif;
+    font-size: 10px; color: var(--green-fresh);
+    letter-spacing: 2.2px; text-transform: uppercase;
+    font-weight: 700;
+  }
 
   .nav-links {
     display: flex; align-items: center; gap: 6px;
@@ -350,7 +349,7 @@
   .why-feat h4 { font-size: 16px; font-weight: 700; color: var(--green-deep); margin-bottom: 5px; }
   .why-feat p { font-size: 14px; color: var(--text-body); line-height: 1.6; }
 
-  /* ── CONTACT PAGE ── */
+  /* ── CONTACT & BOOK LAYOUTS ── */
   .contact-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
   .contact-info { display: flex; flex-direction: column; gap: 24px; }
   .contact-block {
@@ -390,7 +389,6 @@
   .form-group textarea { resize: vertical; min-height: 120px; }
   .form-submit { margin-top: 8px; width: 100%; }
 
-  /* ── BOOK PAGE ── */
   .book-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: start; }
   .book-form-card { background: white; border-radius: 24px; padding: 44px; box-shadow: var(--shadow); border: 1px solid rgba(116,198,157,0.15); }
 
@@ -435,31 +433,6 @@
   }
   .career-hero h2 { color: white; font-size: 40px; margin-bottom: 16px; }
   .career-hero p { font-size: 18px; opacity: 0.85; max-width: 580px; margin: 0 auto 32px; }
-
-  .jobs-grid { display: grid; gap: 20px; }
-  .job-card {
-    background: white; border-radius: var(--radius); padding: 32px;
-    border: 1px solid rgba(116,198,157,0.20); transition: all 0.25s;
-    display: flex; justify-content: space-between; align-items: center; gap: 24px;
-  }
-  .job-card:hover { transform: translateX(6px); box-shadow: var(--shadow-sm); border-color: var(--green-light); }
-  .job-type-badge {
-    display: inline-block; background: var(--green-mist); color: var(--green-mid);
-    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
-    padding: 4px 10px; border-radius: 50px; margin-bottom: 8px;
-  }
-  .job-card h3 { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--green-deep); margin-bottom: 6px; }
-  .job-meta { display: flex; gap: 16px; font-size: 13px; color: var(--text-soft); font-weight: 500; }
-  .job-meta span { display: flex; align-items: center; gap: 4px; }
-
-  .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 56px; }
-  .value-card {
-    background: white; border-radius: 16px; padding: 28px;
-    border: 1px solid rgba(116,198,157,0.18); text-align: center;
-  }
-  .value-card .v-icon { font-size: 32px; margin-bottom: 12px; }
-  .value-card h4 { font-weight: 700; color: var(--green-deep); margin-bottom: 6px; }
-  .value-card p { font-size: 13px; color: var(--text-body); line-height: 1.5; }
 
   /* ── REVIEWS PAGE ── */
   .rating-hero {
@@ -512,12 +485,10 @@
     display: flex; justify-content: space-between; align-items: center;
     font-size: 13px; opacity: 0.5; flex-wrap: wrap; gap: 12px;
   }
-  .eco-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(116,198,157,0.15); border: 1px solid rgba(116,198,157,0.3);
-    border-radius: 50px; padding: 8px 16px; font-size: 13px; font-weight: 600;
-    color: var(--green-light);
-  }
+
+  /* Footer context adjustments for branding text colors */
+  footer .logo-text-top { color: var(--white); }
+  footer .logo-text-bottom { color: var(--green-light); }
 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
@@ -568,7 +539,7 @@
 <nav id="navbar">
   <a class="nav-logo" onclick="showPage('home')">
     <div class="logo-leaf">
-      <svg width="22" height="22" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="24" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M22 4 C22 4 38 12 38 24 C38 36 22 42 22 42 C22 42 6 36 6 24 C6 12 22 4 22 4 Z" fill="rgba(255,255,255,0.25)"/>
         <path d="M22 6 C22 6 36 14 36 24 C36 34 22 40 22 40 C22 40 8 34 8 24 C8 14 22 6 22 6 Z" fill="rgba(255,255,255,0.5)"/>
         <line x1="22" y1="9" x2="22" y2="38" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
@@ -579,7 +550,10 @@
         <path d="M22 32 C22 32 18 28 18 25.5 C18 23.1 19.8 21 22 21 C24.2 21 26 23.1 26 25.5 C26 28 22 32 22 32 Z" fill="white" opacity="0.9"/>
       </svg>
     </div>
-    <span class="logo-text">Lumio<span>.</span></span>
+    <div class="logo-text-group">
+      <span class="logo-text-top">Lumio</span>
+      <span class="logo-text-bottom">Cleaning</span>
+    </div>
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a onclick="showPage('home')" class="active" id="nav-home">Home</a></li>
@@ -795,8 +769,13 @@
         <div class="why-feat"><div class="feat-icon">🌿</div><div><h4>Attention to Detail</h4><p>We take pride in delivering thorough, high-quality cleaning services.</p></div></div>
         <div class="why-feat"><div class="feat-icon">📋</div><div><h4>Thorough Cleaning Process</h4><p>Every service follows a structured approach to provide consistent results.</p></div></div>
         <div class="why-feat"><div class="feat-icon">⏰</div><div><h4>Punctual & Reliable</h4><p>We arrive on time, every time - and notify you when we're on our way.</p></div></div>
-        <div class="why-feat"><div class="feat-icon">💳</div><div><h4>Easy Payment</<h4>Flexible Payment Options</h4>
-<p>Payment can be arranged after your cleaning service. Invoices available upon request.</p></div></div>
+        <div class="why-feat">
+          <div class="feat-icon">💳</div>
+          <div>
+            <h4>Flexible Payment Options</h4>
+            <p>Payment can be arranged after your cleaning service. Invoices available upon request.</p>
+          </div>
+        </div>
       </div>
       <div style="display: flex; flex-direction: column; gap: 20px;">
         <div style="background: var(--green-deep); color: white; border-radius: 24px; padding: 40px;">
@@ -804,33 +783,13 @@
           <p style="font-size: 15px; opacity: 0.8; margin-bottom: 24px; line-height: 1.6;">Our team will help you find the perfect clean for your home and budget. Get a free quote today.</p>
           <button class="btn-primary" onclick="showPage('contact')" style="background: var(--green-light); color: var(--green-deep);">Get Free Quote</button>
         </div>
-        <div style="font-size:13px;font-weight:700;color:var(--green-mid);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;">
-  🎁 First Clean Offer
-</div>
-
-<div style="font-family:'DM Serif Display',serif;font-size:28px;color:var(--green-deep);margin-bottom:8px;">
-  15% Off Your First Clean
-</div>
-
-<p style="font-size:14px;color:var(--text-body);margin-bottom:16px;">
-  Enter your mobile number and email address and we'll contact you to arrange your discounted clean.
-</p>
-
-<input id="discount-phone"
-       type="tel"
-       placeholder="Mobile Number"
-       style="width:100%;padding:12px;margin-bottom:10px;border:1px solid #ddd;border-radius:8px;">
-
-<input id="discount-email"
-       type="email"
-       placeholder="Email Address"
-       style="width:100%;padding:12px;margin-bottom:12px;border:1px solid #ddd;border-radius:8px;">
-
-<button class="btn-primary"
-        style="width:100%;"
-        onclick="submitDiscountLead()">
-  Claim 15% Discount
-</button>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--green-mid);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;">🎁 First Clean Offer</div>
+          <div style="font-family:'DM Serif Display',serif;font-size:28px;color:var(--green-deep);margin-bottom:8px;">15% Off Your First Clean</div>
+          <p style="font-size:14px;color:var(--text-body);margin-bottom:16px;">Enter your mobile number and email address and we'll contact you to arrange your discounted clean.</p>
+          <input id="discount-phone" type="tel" placeholder="Mobile Number" style="width:100%;padding:12px;margin-bottom:10px;border:1px solid #ddd;border-radius:8px;">
+          <input id="discount-email" type="email" placeholder="Email Address" style="width:100%;padding:12px;margin-bottom:12px;border:1px solid #ddd;border-radius:8px;">
+          <button class="btn-primary" style="width:100%;" onclick="submitDiscountLead()">Claim 15% Discount</button>
         </div>
       </div>
     </div>
@@ -857,14 +816,14 @@
         </div>
 
         <div class="form-grid">
-          <div class="form-group"><label>First Name</label><input id="contact-firstname" type="text" placeholder="Jane">
-          <div class="form-group"><label>Last Name</label><input id="contact-lastname" type="text" placeholder="Smith">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="First Name"></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Last Name"></div>
           <div class="form-group full"><label>Address</label><input type="text" placeholder="123 Green Street, Suburb"></div>
-          <div class="form-group"><label>Phone</label><input type="tel" placeholder="04xx xxx xxx"></div>
-          <div class="form-group"><label>Email</label><input id="contact-email" type="email" placeholder="jane@email.com">
+          <div class="form-group"><label>Phone</label><input type="tel" placeholder="Mobile Number"></div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="Email Address"></div>
           <div class="form-group"><label>Preferred Date</label><input type="date"></div>
           <div class="form-group"><label>Preferred Time</label>
-            <select id="contact-subject">
+            <select>
               <option>Morning (8am – 12pm)</option>
               <option>Afternoon (12pm – 4pm)</option>
               <option>Any time</option>
@@ -931,7 +890,6 @@
             <p>To provide reliable, professional, and affordable cleaning services that exceed customer expectations.</p>
           </div>
         </div>
-
         <div class="why-feat">
           <div class="feat-icon">🤝</div>
           <div>
@@ -939,7 +897,6 @@
             <p>We arrive on time, communicate clearly, and deliver consistent results.</p>
           </div>
         </div>
-
         <div class="why-feat">
           <div class="feat-icon">✔️</div>
           <div>
@@ -947,7 +904,6 @@
             <p>You can count on us to provide dependable cleaning services with attention to detail every visit.</p>
           </div>
         </div>
-
         <div class="why-feat">
           <div class="feat-icon">⭐</div>
           <div>
@@ -976,7 +932,7 @@
         </div>
         <div class="contact-block">
           <div class="contact-block-icon">📞</div>
-          <div><h4>Phone</h4><p><a href="tel:0400000000">0420677321</a><br><span style="font-size:13px;color:var(--text-soft)">Mon–Sat, 7am – 6pm</span></p></div>
+          <div><h4>Phone</h4><p><a href="tel:0420677321">0420 677 321</a><br><span style="font-size:13px;color:var(--text-soft)">Mon–Sat, 7am – 6pm</span></p></div>
         </div>
         <div class="contact-block">
           <div class="contact-block-icon">✉️</div>
@@ -989,19 +945,10 @@
         <div style="background: var(--green-deep); border-radius: var(--radius); padding: 28px; color: white;">
           <div style="font-size:24px; margin-bottom:10px;">💬</div>
           <h4 style="font-family:'DM Serif Display',serif; font-size:20px; margin-bottom:8px;">Prefer to chat?</h4>
-          <p style="font-size:14px; opacity:0.8; line-height:1.6;">
-  Message us directly on WhatsApp and we'll get back to you as soon as possible.
-</p>
-
-<div style="margin-top:16px;">
-  <a href="https://wa.me/61420677321"
-     target="_blank"
-     rel="noopener"
-     class="btn-primary"
-     style="font-size:13px;padding:10px 18px;text-decoration:none;display:inline-block;">
-     WhatsApp Us
-  </a>
-</div>
+          <p style="font-size:14px; opacity:0.8; line-height:1.6;">Message us directly on WhatsApp and we'll get back to you as soon as possible.</p>
+          <div style="margin-top:16px;">
+            <a href="https://wa.me/61420677321" target="_blank" rel="noopener" class="btn-primary" style="font-size:13px;padding:10px 18px;text-decoration:none;display:inline-block;">WhatsApp Us</a>
+          </div>
         </div>
       </div>
 
@@ -1009,11 +956,11 @@
         <h3 style="font-family:'DM Serif Display',serif;font-size:24px;color:var(--green-deep);margin-bottom:6px;">Send a Message</h3>
         <p style="font-size:14px;color:var(--text-soft);margin-bottom:28px;">We'll get back to you as soon as possible.</p>
         <div class="form-grid">
-          <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane"></div>
-          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith"></div>
-          <div class="form-group full"><label>Email Address</label><input type="email" placeholder="jane@email.com"></div>
+          <div class="form-group"><label>First Name</label><input id="contact-firstname" type="text" placeholder="Jane"></div>
+          <div class="form-group"><label>Last Name</label><input id="contact-lastname" type="text" placeholder="Smith"></div>
+          <div class="form-group full"><label>Email Address</label><input id="contact-email" type="email" placeholder="jane@email.com"></div>
           <div class="form-group full"><label>Subject</label>
-            <select>
+            <select id="contact-subject">
               <option>Request a Quote</option>
               <option>General Enquiry</option>
               <option>Service Question</option>
@@ -1030,7 +977,7 @@
   </section>
 </div>
 
-
+<!-- ══════════ REVIEWS PAGE ══════════ -->
 <div id="page-reviews" class="page">
   <section>
     <div class="section-header center">
@@ -1091,42 +1038,6 @@
           </div>
         </div>
       </div>
-      <div class="review-card">
-        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        <p class="review-text">We use Lumio for our office every week and they've never let us down once. The team is friendly, reliable, and the office always sparkles on Monday mornings!</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">AP</div>
-          <div>
-            <div class="reviewer-name">Amanda P.</div>
-            <div class="reviewer-date">June 2025</div>
-            <div class="verified">✓ Verified Customer</div>
-          </div>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        <p class="review-text">Easy booking, showed up exactly on time, and the results were incredible. There were a couple of spots I'd have liked redone - they came back the next day without any fuss.</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">MK</div>
-          <div>
-            <div class="reviewer-name">Mark K.</div>
-            <div class="reviewer-date">May 2025</div>
-            <div class="verified">✓ Verified Customer</div>
-          </div>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        <p class="review-text">I've tried several cleaning companies and Lumio is by far the best. Great communication, fair pricing, and you can genuinely tell they care about doing a good job.</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">NW</div>
-          <div>
-            <div class="reviewer-name">Nina W.</div>
-            <div class="reviewer-date">April 2025</div>
-            <div class="verified">✓ Verified Customer</div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <div style="text-align:center; margin-top:56px; padding: 48px; background: var(--green-foam); border-radius: 24px;">
@@ -1160,9 +1071,9 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="nav-logo" style="margin-bottom:16px;">
+      <div class="nav-logo" style="margin-bottom:16px;" onclick="showPage('home')">
         <div class="logo-leaf">
-          <svg width="22" height="22" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="24" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M22 6 C22 6 36 14 36 24 C36 34 22 40 22 40 C22 40 8 34 8 24 C8 14 22 6 22 6 Z" fill="rgba(255,255,255,0.5)"/>
             <line x1="22" y1="9" x2="22" y2="38" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
             <line x1="22" y1="20" x2="30" y2="25" stroke="white" stroke-width="1" stroke-linecap="round"/>
@@ -1172,7 +1083,10 @@
             <path d="M22 32 C22 32 18 28 18 25.5 C18 23.1 19.8 21 22 21 C24.2 21 26 23.1 26 25.5 C26 28 22 32 22 32 Z" fill="white" opacity="0.9"/>
           </svg>
         </div>
-        <span class="logo-text" style="color:white;">Lumio<span style="color:var(--green-light);">.</span></span>
+        <div class="logo-text-group">
+          <span class="logo-text-top">Lumio</span>
+          <span class="logo-text-bottom">Cleaning</span>
+        </div>
       </div>
       <p>Professional cleaning services for homes and businesses across Perth, Western Australia.</p>
       <div style="margin-top:20px;">
@@ -1224,16 +1138,28 @@
   </div>
 </footer>
 
+<!-- ── SCRIPTS LOAD SECTION ── -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
+  // Initialize EmailJS safely
+  emailjs.init({
+    publicKey: "XYqjn-ddGsfnuf2Zf"
+  });
+
   // ── PAGE NAVIGATION ──
   function showPage(id) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-    document.getElementById('page-' + id).classList.add('active');
+    
+    const targetPage = document.getElementById('page-' + id);
+    if(targetPage) {
+      targetPage.classList.add('active');
+    }
+    
     const navEl = document.getElementById('nav-' + id);
     if (navEl) navEl.classList.add('active');
+    
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    // close mobile menu
     document.getElementById('navLinks').classList.remove('open');
   }
 
@@ -1253,84 +1179,93 @@
     el.classList.add('selected');
   }
 
-  // ── FORM SUBMISSIONS ──
- <script>
-// ── NEW EMAILJS CONTACT FORM ──
-function submitContact() {
-  const firstName = document.getElementById("contact-firstname").value;
-  const lastName  = document.getElementById("contact-lastname").value;
-  const email     = document.getElementById("contact-email").value;
-  const subject   = document.getElementById("contact-subject").value;
-  const message   = document.getElementById("contact-message").value;
+  // ── NEW EMAILJS CONTACT FORM ──
+  function submitContact() {
+    const firstName = document.getElementById("contact-firstname").value;
+    const lastName  = document.getElementById("contact-lastname").value;
+    const email     = document.getElementById("contact-email").value;
+    const subject   = document.getElementById("contact-subject").value;
+    const message   = document.getElementById("contact-message").value;
 
-  emailjs.send(
-    "service_giok60r",
-    "template_142d6nl",
-    {
-      from_name: firstName + " " + lastName,
-      reply_to: email,
-      subject: subject,
-      message: message
-    }
-  )
-  .then(() => {
-    const successMessage = document.getElementById("contact-success");
-    successMessage.classList.add("show");
+    emailjs.send(
+      "service_giok60r",
+      "template_142d6nl",
+      {
+        from_name: firstName + " " + lastName,
+        reply_to: email,
+        subject: subject,
+        message: message
+      }
+    )
+    .then(() => {
+      const successMessage = document.getElementById("contact-success");
+      successMessage.classList.add("show");
 
-    setTimeout(() => {
-      successMessage.classList.remove("show");
-    }, 5000);
+      setTimeout(() => {
+        successMessage.classList.remove("show");
+      }, 5000);
 
-    document.getElementById("contact-firstname").value = "";
-    document.getElementById("contact-lastname").value = "";
-    document.getElementById("contact-email").value = "";
-    document.getElementById("contact-subject").value = "";
-    document.getElementById("contact-message").value = "";
-  })
-  .catch((error) => {
-    alert("Failed to send message. Please try again.");
-    console.error("EmailJS Error:", error);
+      document.getElementById("contact-firstname").value = "";
+      document.getElementById("contact-lastname").value = "";
+      document.getElementById("contact-email").value = "";
+      document.getElementById("contact-subject").value = "Request a Quote";
+      document.getElementById("contact-message").value = "";
+    })
+    .catch((error) => {
+      alert("Failed to send message. Please try again.");
+      console.error("EmailJS Error:", error);
+    });
+  }
+
+  // ── ORIGINAL BOOKING FORM SUBMIT ──
+  function submitBook() {
+    const inputs = document.querySelectorAll('#page-book input, #page-book select, #page-book textarea');
+    const service = document.querySelector('#page-book .service-option.selected .s-name');
+    let details = `Booking Request - Lumio Cleaning\n\nService: ${service ? service.textContent : 'Not selected'}\n`;
+    
+    inputs.forEach(el => { 
+      if(el.value) details += `${el.placeholder || el.name || el.type}: ${el.value}\n`; 
+    });
+    
+    const body = encodeURIComponent(details);
+    window.location.href = `mailto:info@lumiocleaning.com?subject=${encodeURIComponent('[Lumio Cleaning] New Booking Request')}&body=${body}`;
+    
+    const s = document.getElementById('book-success');
+    s.classList.add('show');
+    setTimeout(() => s.classList.remove('show'), 5000);
+  }
+
+  // ── JOB APPLICATION FORM ──
+  function submitApply() {
+    const s = document.getElementById('apply-success');
+    s.classList.add('show');
+    setTimeout(() => { s.classList.remove('show'); closeModal(); }, 4000);
+  }
+
+  // ── CAREER MODAL CONTROLS ──
+  function showApplyModal(role) {
+    document.getElementById('modal-title').textContent = role;
+    document.getElementById('apply-modal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('apply-modal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  // Close modal if user clicks outside the box
+  document.getElementById('apply-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
   });
-}
 
-// ── JOB APPLICATION FORM ──
-function submitApply() {
-  const s = document.getElementById('apply-success');
-  s.classList.add('show');
-  setTimeout(() => { s.classList.remove('show'); closeModal(); }, 4000);
-}
-
-// ── CAREER MODAL CONTROLS ──
-function showApplyModal(role) {
-  document.getElementById('modal-title').textContent = role;
-  document.getElementById('apply-modal').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-  document.getElementById('apply-modal').style.display = 'none';
-  document.body.style.overflow = '';
-}
-
-// Close modal if user clicks outside the box
-document.getElementById('apply-modal').addEventListener('click', function(e) {
-  if (e.target === this) closeModal();
-});
-
-// ── 15% DISCOUNT FORM ──
-function submitDiscountLead() {
-  const phone = document.getElementById('discount-phone').value;
-  const email = document.getElementById('discount-email').value;
-  const body = encodeURIComponent(`Mobile Number: ${phone}\nEmail Address: ${email}`);
-  window.location.href = `mailto:######################?subject=${encodeURIComponent('Lumio 15% Discount Customer')}&body=${body}`;
-}
-</script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script>
-emailjs.init({
-  publicKey: "XYqjn-ddGsfnuf2Zf"
-});
+  // ── 15% DISCOUNT FORM ──
+  function submitDiscountLead() {
+    const phone = document.getElementById('discount-phone').value;
+    const email = document.getElementById('discount-email').value;
+    const body = encodeURIComponent(`Mobile Number: ${phone}\nEmail Address: ${email}`);
+    window.location.href = `mailto:info@lumiocleaning.com?subject=${encodeURIComponent('Lumio 15% Discount Customer')}&body=${body}`;
+  }
 </script>
 </body>
 </html>
