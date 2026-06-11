@@ -474,15 +474,55 @@
   footer {
     background: var(--green-deep); color: white; padding: 64px 48px 32px;
   }
-  .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-  .footer-brand p { font-size: 14px; opacity: 0.7; line-height: 1.7; margin-top: 16px; max-width: 260px; }
-  .footer-col h5 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; opacity: 0.5; margin-bottom: 16px; }
-  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .footer-col a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; cursor: pointer; transition: color 0.2s; }
-  .footer-col a:hover { color: var(--green-light); }
-  .footer-bottom {
+ /* ==========================================================================
+   1. DESKTOP STYLES (Your complete original design)
+   ========================================================================== */
+.footer-grid { 
+  display: grid; 
+  grid-template-columns: 1.5fr 1fr 1fr 1fr; 
+  gap: 48px; 
+  margin-bottom: 48px; 
+}
+
+.footer-brand p { 
+  font-size: 14px; 
+  opacity: 0.7; 
+  line-height: 1.7; 
+  margin-top: 16px; 
+  max-width: 260px; 
+}
+
+.footer-col h5 { 
+  font-size: 12px; 
+  font-weight: 700; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+  opacity: 0.5; 
+  margin-bottom: 16px; 
+}
+
+.footer-col ul { 
+  list-style: none; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 10px; 
+}
+
+.footer-col a { 
+  color: rgba(255,255,255,0.75); 
+  text-decoration: none; 
+  font-size: 14px; 
+  cursor: pointer; 
+  transition: color 0.2s; 
+}
+
+.footer-col a:hover { 
+  color: var(--green-light); 
+}
+
+.footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.1); 
-  padding: 28px 20px 20px 20px; /* Added 20px safety padding to the left, right, and bottom */
+  padding: 28px 20px 20px 20px; /* Protected buffer for mobile screens */
   display: flex; 
   justify-content: space-between; 
   align-items: center;
@@ -490,8 +530,30 @@
   opacity: 0.5; 
   flex-wrap: wrap; 
   gap: 12px;
-  box-sizing: border-box;        /* Strictly restricts the width so it cannot overflow */
+  box-sizing: border-box;        /* Prevents layout from spilling over edges */
   width: 100%;
+}
+
+/* ==========================================================================
+   2. MOBILE STYLES (The automated fix for phone screens)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr; /* Stacks the 4 side-by-side columns into a neat vertical list */
+    gap: 32px;                  
+    margin-bottom: 32px;
+  }
+
+  .footer-brand p {
+    max-width: 100%;            /* Allows the description text to use the full mobile width smoothly */
+  }
+
+  .footer-bottom {
+    flex-direction: column;      /* Stacks copyright and business info vertically */
+    justify-content: center;     
+    text-align: center;          /* Centers all bottom elements perfectly */
+    gap: 10px;
+  }
 }
 
 /* This automatically fixes the layout on mobile screens */
