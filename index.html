@@ -617,7 +617,7 @@
 
 <!-- NAV -->
 <nav id="navbar">
-  <a class="nav-logo" onclick="showPage('home')">
+  <a class="nav-logo" href="index.html">
     <div class="logo-leaf">
       <svg width="24" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M22 4 C22 4 38 12 38 24 C38 36 22 42 22 42 C22 42 6 36 6 24 C6 12 22 4 22 4 Z" fill="rgba(255,255,255,0.25)"/>
@@ -655,8 +655,8 @@
       <h1>Perth's Cleaning Experts <br><em>Trusted, Thorough</em> & Affordable.</h1>
       <p class="hero-sub">Lumio Cleaning brings a brighter clean to homes, offices, and commercial spaces across Perth, WA. Experienced, reliable, and committed to quality every time.</p>
       <div class="hero-buttons">
-        <button class="btn-primary" onclick="showPage('book')">Book a Clean</button>
-        <button class="btn-secondary" onclick="showPage('services')">Our Services →</button>
+        <a href="book.html" class="btn-primary" style="text-decoration:none;display:inline-block;">Book a Clean</a>
+        <a href="services.html" class="btn-secondary" style="text-decoration:none;display:inline-block;">Our Services →</a>
       </div>
       <div class="hero-stats">
         <div><div class="stat-label">✓ Locally Owned</div></div>
@@ -701,19 +701,19 @@
       <p class="section-sub">From regular home maintenance to deep cleans and commercial spaces - we handle it all with care.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card" onclick="showPage('services')">
+      <div class="service-card" onclick="window.location='services.html'">
         <span class="service-emoji">🏠</span>
         <h3>Residential Cleaning</h3>
         <p>Weekly, fortnightly, or one-off home cleans tailored to your lifestyle and schedule.</p>
         <span class="service-tag">Most Popular</span>
       </div>
-      <div class="service-card" onclick="showPage('services')">
+      <div class="service-card" onclick="window.location='services.html'">
         <span class="service-emoji">✨</span>
         <h3>Deep Cleaning</h3>
         <p>A thorough top-to-bottom clean covering every corner, surface, and hidden space.</p>
         <span class="service-tag">Recommended</span>
       </div>
-      <div class="service-card" onclick="showPage('services')">
+      <div class="service-card" onclick="window.location='services.html'">
         <span class="service-emoji">🏢</span>
         <h3>Commercial Spaces</h3>
         <p>Offices, retail, and commercial properties kept spotless for your team and customers.</p>
@@ -721,7 +721,7 @@
       </div>
     </div>
     <div style="text-align:center; margin-top: 36px;">
-      <button class="btn-primary" onclick="showPage('services')">See All Services</button>
+      <a href="services.html" class="btn-primary" style="text-decoration:none;display:inline-block;">See All Services</a>
     </div>
   </section>
 
@@ -779,8 +779,8 @@
     <h2 style="margin-bottom:16px;">Ready for a <em>Fresher</em> Home?</h2>
     <p style="font-size:17px; color:var(--text-body); max-width:500px; margin: 0 auto 36px;">Book your first clean and experience the Lumio difference - eco-friendly, professional, and stress-free.</p>
     <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-      <button class="btn-primary" onclick="showPage('book')">Book a Clean</button>
-      <button class="btn-secondary" onclick="showPage('contact')">Get in Touch</button>
+      <a href="book.html" class="btn-primary" style="text-decoration:none;display:inline-block;">Book a Clean</a>
+      <a href="contact.html" class="btn-secondary" style="text-decoration:none;display:inline-block;">Get in Touch</a>
     </div>
   </section>
 </div>
@@ -861,7 +861,7 @@
         <div style="background: var(--green-deep); color: white; border-radius: 24px; padding: 40px;">
           <h3 style="font-family: 'DM Serif Display', serif; font-size: 26px; margin-bottom: 12px; color: white;">Not sure which service?</h3>
           <p style="font-size: 15px; opacity: 0.8; margin-bottom: 24px; line-height: 1.6;">Our team will help you find the perfect clean for your home and budget. Get a free quote today.</p>
-          <button class="btn-primary" onclick="showPage('contact')" style="background: var(--green-light); color: var(--green-deep);">Get Free Quote</button>
+          <a href="contact.html" class="btn-primary" style="background:var(--green-light);color:var(--green-deep);text-decoration:none;display:inline-block;">Get Free Quote</a>
         </div>
         <div>
           <div style="font-size:13px;font-weight:700;color:var(--green-mid);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;">🎁 First Clean Offer</div>
@@ -1151,7 +1151,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="nav-logo" style="margin-bottom:16px;" onclick="showPage('home')">
+      <div class="nav-logo" style="margin-bottom:16px;" href="index.html">
         <div class="logo-leaf">
           <svg width="24" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M22 6 C22 6 36 14 36 24 C36 34 22 40 22 40 C22 40 8 34 8 24 C8 14 22 6 22 6 Z" fill="rgba(255,255,255,0.5)"/>
@@ -1186,27 +1186,27 @@
     <div class="footer-col">
       <h5>Services</h5>
       <ul>
-        <li><a onclick="showPage('services')">Residential</a></li>
-        <li><a onclick="showPage('services')">Deep Clean</a></li>
-        <li><a onclick="showPage('services')">Move In/Out</a></li>
-        <li><a onclick="showPage('services')">Commercial</a></li>
-        <li><a onclick="showPage('services')">Windows</a></li>
+        <li><a href="services.html">Residential</a></li>
+        <li><a href="services.html">Deep Clean</a></li>
+        <li><a href="services.html">Move In/Out</a></li>
+        <li><a href="services.html">Commercial</a></li>
+        <li><a href="services.html">Windows</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>Company</h5>
       <ul>
-        <li><a onclick="showPage('home')">Home</a></li>
-        <li><a onclick="showPage('about')">About Us</a></li>
-        <li><a onclick="showPage('contact')">Contact Us</a></li>
-        <li><a href="policy">Policy</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="policy.html">Policy</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>Get Started</h5>
       <ul>
-        <li><a onclick="showPage('book')">Book a Clean</a></li>
-        <li><a onclick="showPage('contact')">Free Quote</a></li>
+        <li><a href="book.html">Book a Clean</a></li>
+        <li><a href="contact.html">Free Quote</a></li>
         <li><a href="tel:0420677321">0420 677 321</a></li>
         <li><a href="mailto:info@lumiocleaning.com">Email Us</a></li>
       </ul>
