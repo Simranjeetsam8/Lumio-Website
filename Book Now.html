@@ -7,7 +7,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FK6M8JX1RD"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -108,159 +107,10 @@
   }
   .nav-cta:hover { background: var(--green-mid) !important; transform: translateY(-1px); }
 
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; display: none; }
   .hamburger span { width: 24px; height: 2px; background: var(--green-deep); border-radius: 2px; transition: all 0.3s; }
 
-  /* ── PAGES ── */
-  .page { display: none; padding-top: 80px; min-height: 100vh; }
-  .page.active { display: block; }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: calc(100vh - 80px);
-    display: grid; grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 60px 48px 60px;
-    gap: 60px;
-    position: relative; overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; top: -120px; right: -120px;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(116,198,157,0.18) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .hero::after {
-    content: '';
-    position: absolute; bottom: -80px; left: -80px;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(64,145,108,0.10) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .hero-content { position: relative; z-index: 2; }
-
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--green-mist); border: 1px solid var(--green-pale);
-    border-radius: 50px; padding: 8px 16px; margin-bottom: 28px;
-    font-size: 13px; font-weight: 700; color: var(--green-mid);
-    letter-spacing: 0.5px; text-transform: uppercase;
-    animation: fadeUp 0.6s ease both;
-  }
-  .hero-badge::before { content: '🌿'; font-size: 14px; }
-
-  h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(40px, 5vw, 64px);
-    line-height: 1.08;
-    color: var(--green-deep);
-    margin-bottom: 24px;
-    animation: fadeUp 0.7s 0.1s ease both;
-  }
-  h1 em { font-style: italic; color: var(--green-fresh); }
-
-  .hero-sub {
-    font-size: 18px; line-height: 1.7;
-    color: var(--text-body); margin-bottom: 40px;
-    max-width: 480px;
-    animation: fadeUp 0.7s 0.2s ease both;
-    font-weight: 400;
-  }
-
-  .hero-buttons {
-    display: flex; gap: 16px; flex-wrap: wrap;
-    animation: fadeUp 0.7s 0.3s ease both;
-  }
-  .btn-primary {
-    background: var(--green-fresh);
-    color: white; border: none;
-    padding: 16px 32px; border-radius: 50px;
-    font-size: 15px; font-weight: 700;
-    cursor: pointer; transition: all 0.25s;
-    box-shadow: 0 6px 20px rgba(64,145,108,0.35);
-    font-family: 'Nunito', sans-serif;
-    letter-spacing: 0.2px;
-  }
-  .btn-primary:hover { background: var(--green-mid); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(64,145,108,0.40); }
-
-  .btn-secondary {
-    background: white; color: var(--green-fresh);
-    border: 2px solid var(--green-pale);
-    padding: 14px 30px; border-radius: 50px;
-    font-size: 15px; font-weight: 700;
-    cursor: pointer; transition: all 0.25s;
-    font-family: 'Nunito', sans-serif;
-  }
-  .btn-secondary:hover { border-color: var(--green-fresh); background: var(--green-foam); }
-
-  .hero-stats {
-    display: flex; gap: 32px; margin-top: 48px; padding-top: 40px;
-    border-top: 1px solid var(--green-pale);
-    animation: fadeUp 0.7s 0.4s ease both;
-  }
-  .stat-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 32px; color: var(--green-deep); line-height: 1;
-  }
-  .stat-label { font-size: 13px; color: var(--text-soft); font-weight: 500; margin-top: 4px; }
-
-  .hero-visual {
-    position: relative; z-index: 2;
-    animation: fadeIn 1s 0.2s ease both;
-  }
-  .hero-card-main {
-    background: white; border-radius: 28px;
-    padding: 40px; box-shadow: var(--shadow);
-    border: 1px solid rgba(116,198,157,0.20);
-    position: relative; overflow: hidden;
-  }
-  .hero-card-main::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; height: 4px;
-    background: linear-gradient(90deg, var(--green-fresh), var(--green-light));
-  }
-  .card-icon-row {
-    display: flex; gap: 12px; margin-bottom: 28px;
-  }
-  .card-icon {
-    width: 52px; height: 52px; border-radius: 14px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 22px; flex-shrink: 0;
-  }
-  .card-icon.g1 { background: var(--green-mist); }
-  .card-icon.g2 { background: #e8f5e9; }
-  .card-icon.g3 { background: #f1f8e9; }
-
-  .card-label { font-size: 13px; color: var(--text-soft); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
-  .card-title-sm { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--green-deep); margin-bottom: 6px; }
-  .card-desc { font-size: 14px; color: var(--text-body); line-height: 1.6; }
-
-  .floating-badge {
-    position: absolute;
-    background: white; border-radius: 16px; padding: 14px 18px;
-    box-shadow: 0 8px 24px rgba(26,58,42,0.14);
-    display: flex; align-items: center; gap: 10px;
-    font-size: 13px; font-weight: 700; color: var(--green-deep);
-    animation: float 3s ease-in-out infinite;
-  }
-  .floating-badge.b1 { bottom: -20px; left: -24px; animation-delay: 0s; }
-  .floating-badge.b2 { top: -16px; right: -20px; animation-delay: 1.5s; }
-  .badge-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--green-fresh); }
-
-  /* ── ECO STRIP ── */
-  .eco-strip {
-    background: var(--green-deep); color: white;
-    padding: 20px 48px;
-    display: flex; align-items: center; gap: 40px; overflow: hidden;
-  }
-  .eco-item {
-    display: flex; align-items: center; gap: 10px;
-    font-size: 14px; font-weight: 600; white-space: nowrap;
-    opacity: 0.92;
-  }
-
-  /* ── SECTIONS ── */
+  /* ── SECTION STRUCTURING ── */
   section { padding: 80px 48px; }
   .section-tag {
     display: inline-block;
@@ -268,108 +118,30 @@
     font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
     padding: 6px 14px; border-radius: 50px; margin-bottom: 16px;
   }
-  h2 {
+  <h2> {
     font-family: 'DM Serif Display', serif;
     font-size: clamp(28px, 3.5vw, 46px); color: var(--green-deep);
     line-height: 1.1; margin-bottom: 16px;
   }
   h2 em { font-style: italic; color: var(--green-fresh); }
   .section-sub { font-size: 17px; color: var(--text-body); line-height: 1.7; max-width: 560px; }
-
   .section-header { margin-bottom: 56px; }
-  .section-header.center { text-align: center; }
-  .section-header.center .section-sub { margin: 0 auto; }
 
-  /* ── SERVICES PAGE ── */
-  .services-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-  }
-  .service-card {
-    background: white; border-radius: var(--radius);
-    padding: 36px; border: 1px solid rgba(116,198,157,0.20);
-    transition: all 0.3s; position: relative; overflow: hidden;
-    cursor: default;
-  }
-  .service-card::after {
-    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, var(--green-fresh), var(--green-light));
-    transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
-  }
-  .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
-  .service-card:hover::after { transform: scaleX(1); }
+  /* ── BOOKING CONTAINER LAYOUT ── */
+  .page-wrapper { padding-top: 80px; min-height: 100vh; }
+  .book-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: start; }
+  .book-form-card { background: white; border-radius: 24px; padding: 44px; box-shadow: var(--shadow); border: 1px solid rgba(116,198,157,0.15); }
 
-  .service-emoji { font-size: 36px; margin-bottom: 20px; display: block; }
-  .service-card h3 { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--green-deep); margin-bottom: 10px; }
-  .service-card p { font-size: 14px; color: var(--text-body); line-height: 1.7; margin-bottom: 20px; }
-  .service-tag {
-    display: inline-block; background: var(--green-foam); color: var(--green-mid);
-    font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 50px;
+  .service-select-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+  .service-option {
+    border: 2px solid var(--green-pale); border-radius: 14px; padding: 18px;
+    cursor: pointer; transition: all 0.2s; text-align: center;
   }
-  .service-price {
-    position: absolute; top: 24px; right: 24px;
-    font-size: 13px; font-weight: 700; color: var(--green-fresh);
-  }
+  .service-option:hover { border-color: var(--green-fresh); background: var(--green-foam); }
+  .service-option.selected { border-color: var(--green-fresh); background: var(--green-mist); }
+  .service-option .s-icon { font-size: 24px; margin-bottom: 6px; }
+  .service-option .s-name { font-size: 13px; font-weight: 700; color: var(--green-deep); }
 
-  /* ── WHY LUMIO ── */
-  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-  .why-visual {
-    background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
-    border-radius: 28px; padding: 48px; color: white; position: relative; overflow: hidden;
-  }
-  .why-visual::before {
-    content: ''; position: absolute; top: -60px; right: -60px;
-    width: 220px; height: 220px;
-    background: rgba(255,255,255,0.06); border-radius: 50%;
-  }
-  .why-bignum {
-    font-family: 'DM Serif Display', serif; font-size: 80px; line-height: 1;
-    color: rgba(255,255,255,0.15); position: absolute; bottom: 20px; right: 28px;
-  }
-  .why-list { list-style: none; margin-top: 24px; display: flex; flex-direction: column; gap: 14px; }
-  .why-list li {
-    display: flex; align-items: flex-start; gap: 12px;
-    font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.9);
-  }
-  .why-list li::before { content: '✓'; color: var(--green-light); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-
-  .why-features { display: flex; flex-direction: column; gap: 24px; }
-  .why-feat {
-    display: flex; gap: 20px; align-items: flex-start;
-    padding: 24px; background: white; border-radius: 16px;
-    border: 1px solid rgba(116,198,157,0.20);
-    transition: box-shadow 0.2s;
-  }
-  .why-feat:hover { box-shadow: var(--shadow-sm); }
-  .feat-icon {
-    width: 48px; height: 48px; border-radius: 12px;
-    background: var(--green-mist); display: flex; align-items: center; justify-content: center;
-    font-size: 20px; flex-shrink: 0;
-  }
-  .why-feat h4 { font-size: 16px; font-weight: 700; color: var(--green-deep); margin-bottom: 5px; }
-  .why-feat p { font-size: 14px; color: var(--text-body); line-height: 1.6; }
-
-  /* ── CONTACT & BOOK LAYOUTS ── */
-  .contact-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
-  .contact-info { display: flex; flex-direction: column; gap: 24px; }
-  .contact-block {
-    background: white; border-radius: var(--radius); padding: 28px;
-    border: 1px solid rgba(116,198,157,0.20);
-    display: flex; gap: 16px; align-items: flex-start;
-  }
-  .contact-block-icon {
-    width: 44px; height: 44px; border-radius: 12px;
-    background: var(--green-mist); display: flex; align-items: center; justify-content: center;
-    font-size: 18px; flex-shrink: 0;
-  }
-  .contact-block h4 { font-weight: 700; color: var(--green-deep); margin-bottom: 4px; }
-  .contact-block p { font-size: 14px; color: var(--text-body); }
-  .contact-block a { color: var(--green-fresh); text-decoration: none; font-weight: 600; }
-
-  .form-card {
-    background: white; border-radius: 24px; padding: 44px;
-    box-shadow: var(--shadow); border: 1px solid rgba(116,198,157,0.15);
-  }
   .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .form-group { display: flex; flex-direction: column; gap: 8px; }
   .form-group.full { grid-column: 1 / -1; }
@@ -387,20 +159,15 @@
     background: white;
   }
   .form-group textarea { resize: vertical; min-height: 120px; }
-  .form-submit { margin-top: 8px; width: 100%; }
-
-  .book-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: start; }
-  .book-form-card { background: white; border-radius: 24px; padding: 44px; box-shadow: var(--shadow); border: 1px solid rgba(116,198,157,0.15); }
-
-  .service-select-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
-  .service-option {
-    border: 2px solid var(--green-pale); border-radius: 14px; padding: 18px;
-    cursor: pointer; transition: all 0.2s; text-align: center;
+  
+  .btn-primary {
+    background: var(--green-fresh); color: white; border: none;
+    padding: 16px 32px; border-radius: 50px; font-size: 15px; font-weight: 700;
+    cursor: pointer; transition: all 0.25s; box-shadow: 0 6px 20px rgba(64,145,108,0.35);
+    font-family: 'Nunito', sans-serif; letter-spacing: 0.2px;
   }
-  .service-option:hover { border-color: var(--green-fresh); background: var(--green-foam); }
-  .service-option.selected { border-color: var(--green-fresh); background: var(--green-mist); }
-  .service-option .s-icon { font-size: 24px; margin-bottom: 6px; }
-  .service-option .s-name { font-size: 13px; font-weight: 700; color: var(--green-deep); }
+  .btn-primary:hover { background: var(--green-mid); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(64,145,108,0.40); }
+  .form-submit { margin-top: 8px; width: 100%; }
 
   .book-info { display: flex; flex-direction: column; gap: 20px; }
   .book-benefit {
@@ -421,214 +188,45 @@
   .price-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 14px; }
   .price-row:last-child { border: none; font-weight: 700; font-size: 16px; }
 
-  /* ── CAREER PAGE ── */
-  .career-hero {
-    background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
-    border-radius: 28px; padding: 64px; color: white; text-align: center;
-    margin-bottom: 60px; position: relative; overflow: hidden;
-  }
-  .career-hero::before {
-    content: '🌿'; font-size: 180px; opacity: 0.05;
-    position: absolute; top: -20px; right: 20px; line-height: 1;
-  }
-  .career-hero h2 { color: white; font-size: 40px; margin-bottom: 16px; }
-  .career-hero p { font-size: 18px; opacity: 0.85; max-width: 580px; margin: 0 auto 32px; }
-
-  /* ── REVIEWS PAGE ── */
-  .rating-hero {
-    background: white; border-radius: 24px; padding: 48px;
-    box-shadow: var(--shadow-sm); text-align: center; margin-bottom: 48px;
-    border: 1px solid rgba(116,198,157,0.20);
-    display: flex; justify-content: center; align-items: center; gap: 80px; flex-wrap: wrap;
-  }
-  .rating-big { font-family: 'DM Serif Display', serif; font-size: 80px; color: var(--green-deep); line-height: 1; }
-  .rating-stars { font-size: 28px; letter-spacing: 4px; margin: 8px 0; }
-  .rating-count { font-size: 14px; color: var(--text-soft); font-weight: 500; }
-  .rating-breakdown { display: flex; flex-direction: column; gap: 10px; min-width: 240px; }
-  .bar-row { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; color: var(--text-body); }
-  .bar-track { flex: 1; height: 8px; background: var(--green-mist); border-radius: 4px; overflow: hidden; }
-  .bar-fill { height: 100%; background: linear-gradient(90deg, var(--green-fresh), var(--green-light)); border-radius: 4px; }
-
-  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-  .review-card {
-    background: white; border-radius: var(--radius); padding: 32px;
-    border: 1px solid rgba(116,198,157,0.20); transition: box-shadow 0.25s;
-    position: relative;
-  }
-  .review-card:hover { box-shadow: var(--shadow-sm); }
-  .review-card::before { content: '"'; font-family: 'DM Serif Display', serif; font-size: 80px; color: var(--green-mist); position: absolute; top: 10px; right: 20px; line-height: 1; }
-  .review-stars { font-size: 16px; letter-spacing: 2px; margin-bottom: 14px; }
-  .review-text { font-size: 15px; color: var(--text-body); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
-  .reviewer { display: flex; align-items: center; gap: 12px; }
-  .reviewer-avatar {
-    width: 44px; height: 44px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--green-fresh), var(--green-light));
-    display: flex; align-items: center; justify-content: center;
-    color: white; font-weight: 700; font-size: 16px; flex-shrink: 0;
-  }
-  .reviewer-name { font-weight: 700; color: var(--green-deep); font-size: 15px; }
-  .reviewer-date { font-size: 12px; color: var(--text-soft); margin-top: 2px; }
-  .verified { font-size: 11px; color: var(--green-fresh); font-weight: 700; display: flex; align-items: center; gap: 4px; }
-
   /* ── FOOTER ── */
-  footer {
-    background: var(--green-deep); color: white; padding: 64px 48px 32px;
-  }
- /* ==========================================================================
-   1. DESKTOP STYLES (Your complete original design)
-   ========================================================================== */
-.footer-grid { 
-  display: grid; 
-  grid-template-columns: 1.5fr 1fr 1fr 1fr; 
-  gap: 48px; 
-  margin-bottom: 48px; 
-}
+  footer { background: var(--green-deep); color: white; padding: 64px 48px 32px; }
+  .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+  .footer-brand p { font-size: 14px; opacity: 0.7; line-height: 1.7; margin-top: 16px; max-width: 260px; }
+  .footer-col h5 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; opacity: 0.5; margin-bottom: 16px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; cursor: pointer; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--green-light); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 28px 20px 20px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; opacity: 0.5; flex-wrap: wrap; gap: 12px; width: 100%; }
 
-.footer-brand p { 
-  font-size: 14px; 
-  opacity: 0.7; 
-  line-height: 1.7; 
-  margin-top: 16px; 
-  max-width: 260px; 
-}
-
-.footer-col h5 { 
-  font-size: 12px; 
-  font-weight: 700; 
-  text-transform: uppercase; 
-  letter-spacing: 1px; 
-  opacity: 0.5; 
-  margin-bottom: 16px; 
-}
-
-.footer-col ul { 
-  list-style: none; 
-  display: flex; 
-  flex-direction: column; 
-  gap: 10px; 
-}
-
-.footer-col a { 
-  color: rgba(255,255,255,0.75); 
-  text-decoration: none; 
-  font-size: 14px; 
-  cursor: pointer; 
-  transition: color 0.2s; 
-}
-
-.footer-col a:hover { 
-  color: var(--green-light); 
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.1); 
-  padding: 28px 20px 20px 20px; /* Protected buffer for mobile screens */
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center;
-  font-size: 13px; 
-  opacity: 0.5; 
-  flex-wrap: wrap; 
-  gap: 12px;
-  box-sizing: border-box;        /* Prevents layout from spilling over edges */
-  width: 100%;
-}
-
-/* ==========================================================================
-   2. MOBILE STYLES (The automated fix for phone screens)
-   ========================================================================== */
-@media (max-width: 768px) {
-  .footer-grid {
-    grid-template-columns: 1fr; /* Stacks the 4 side-by-side columns into a neat vertical list */
-    gap: 32px;                  
-    margin-bottom: 32px;
-  }
-
-  .footer-brand p {
-    max-width: 100%;            /* Allows the description text to use the full mobile width smoothly */
-  }
-
-  .footer-bottom {
-    flex-direction: column;      /* Stacks copyright and business info vertically */
-    justify-content: center;     
-    text-align: center;          /* Centers all bottom elements perfectly */
-    gap: 10px;
-  }
-}
-
-/* This automatically fixes the layout on mobile screens */
-@media (max-width: 768px) {
-  .footer-bottom {
-    flex-direction: column;      /* Stacks the text lines neatly on top of each other */
-    justify-content: center;     /* Centers the layout group */
-    text-align: center;          /* Centers the text inside */
-    gap: 10px;
-  }
-}
-
-  /* Footer context adjustments for branding text colors */
   footer .logo-text-top { color: var(--white); }
   footer .logo-text-bottom { color: var(--green-light); }
 
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-
-  /* ── SUCCESS STATE ── */
   .success-msg {
     background: var(--green-mist); border: 1px solid var(--green-pale);
     border-radius: 12px; padding: 16px 20px;
     color: var(--green-mid); font-weight: 600; font-size: 14px;
-    display: none; margin-top: 12px;
-    align-items: center; gap: 10px;
+    display: none; margin-top: 12px; align-items: center; gap: 10px;
   }
   .success-msg.show { display: flex; }
 
-  /* ── MOBILE ── */
+  /* ── MOBILE RESPONSIVENESS ── */
   @media (max-width: 768px) {
-    nav { padding: 16px 24px; }
+    nav { padding: 14px 20px; }
     .nav-links { display: none; position: fixed; top: 72px; left: 0; right: 0; background: white; flex-direction: column; padding: 20px 24px; border-bottom: 1px solid var(--green-pale); gap: 4px; }
     .nav-links.open { display: flex; }
     .hamburger { display: flex; }
-
-    .hero { grid-template-columns: 1fr; padding: 40px 24px; gap: 40px; }
-    .hero-visual { display: none; }
     section { padding: 60px 24px; }
-    .contact-layout, .book-layout, .why-grid { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .book-layout { grid-template-columns: 1fr; gap: 40px; }
     .form-grid { grid-template-columns: 1fr; }
     .service-select-grid { grid-template-columns: 1fr 1fr; }
-    .rating-hero { gap: 32px; }
-    nav { padding: 14px 20px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; margin-bottom: 32px; }
+    .footer-brand p { max-width: 100%; }
+    .footer-bottom { flex-direction: column; justify-content: center; text-align: center; gap: 10px; }
   }
-
-</head>
-<body>
-
-<!-- NAV -->
-<nav id="navbar">
-  <a class="nav-logo" onclick="showPage('home')">
-
-  /* ── BOOK PAGE EXTRA ── */
-  .page-wrapper { padding-top: 80px; min-height: 100vh; }
-  footer .nav-logo { cursor: pointer; }
-  footer .logo-text-top { color: white; }
-  footer .logo-text-bottom { color: var(--green-light); }
 </style>
 </head>
 <body>
 
-<!-- ── NAV ── -->
 <nav id="navbar">
   <a class="nav-logo" href="index.html">
     <div class="logo-leaf">
@@ -653,14 +251,13 @@
     <li><a href="services.html">Services</a></li>
     <li><a href="about.html">About Us</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="book.html" class="active nav-cta">Book Now</a></li>
+    <li><a href="Book Now.html" class="active nav-cta">Book Now</a></li>
   </ul>
   <div class="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </div>
 </nav>
 
-<!-- ── BOOK PAGE ── -->
 <div class="page-wrapper">
   <section>
     <div class="section-header">
@@ -670,7 +267,6 @@
     </div>
 
     <div class="book-layout">
-      <!-- LEFT: Form -->
       <div class="book-form-card">
         <h3 style="font-family:'DM Serif Display',serif; font-size:22px; color:var(--green-deep); margin-bottom:6px;">Select a Service</h3>
         <p style="font-size:13px;color:var(--text-soft);margin-bottom:20px;">Choose the clean that suits your needs</p>
@@ -713,7 +309,6 @@
         <div class="success-msg" id="book-success">&#10003; Booking received! We'll confirm within 2 hours.</div>
       </div>
 
-      <!-- RIGHT: Info -->
       <div class="book-info">
         <div class="price-estimate">
           <h4>Quick Estimate</h4>
@@ -740,7 +335,6 @@
           <div><h4>Local Perth Business</h4><p>Proudly serving homes, offices, and commercial spaces across Perth and surrounding areas.</p></div>
         </div>
 
-        <!-- Contact alternative -->
         <div style="background:var(--green-deep); border-radius:18px; padding:28px; color:white; text-align:center;">
           <div style="font-size:22px; margin-bottom:10px;">📞</div>
           <h4 style="font-family:'DM Serif Display',serif; font-size:20px; margin-bottom:8px;">Prefer to Call?</h4>
@@ -754,7 +348,6 @@
   </section>
 </div>
 
-<!-- ── FOOTER ── -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -801,7 +394,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="book.html">Book a Clean</a></li>
+        <li><a href="Book Now.html">Book a Clean</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -821,7 +414,6 @@
   </div>
 </footer>
 
-<!-- ── SCRIPTS ── -->
 <script>
   function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('open');
@@ -845,6 +437,7 @@
     const size      = selects[1] ? selects[1].value : '';
     const notes     = document.querySelector('textarea').value;
     const service   = document.querySelector('.service-option.selected .s-name');
+    
     const details = 'Booking Request — Lumio Cleaning\n'
       + '\nService: ' + (service ? service.textContent : 'Not selected')
       + '\nName: ' + firstName + ' ' + lastName
@@ -855,9 +448,11 @@
       + '\nTime: ' + time
       + '\nHome Size: ' + size
       + '\nNotes: ' + notes;
+      
     window.location.href = 'mailto:info@lumiocleaning.com?subject='
       + encodeURIComponent('[Lumio Cleaning] New Booking Request')
       + '&body=' + encodeURIComponent(details);
+      
     const s = document.getElementById('book-success');
     if (s) { s.classList.add('show'); setTimeout(() => s.classList.remove('show'), 5000); }
   }
