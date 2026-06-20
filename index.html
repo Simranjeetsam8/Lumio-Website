@@ -556,16 +556,6 @@
   }
 }
 
-/* This automatically fixes the layout on mobile screens */
-@media (max-width: 768px) {
-  .footer-bottom {
-    flex-direction: column;      /* Stacks the text lines neatly on top of each other */
-    justify-content: center;     /* Centers the layout group */
-    text-align: center;          /* Centers the text inside */
-    gap: 10px;
-  }
-}
-
   /* Footer context adjustments for branding text colors */
   footer .logo-text-top { color: var(--white); }
   footer .logo-text-bottom { color: var(--green-light); }
@@ -605,7 +595,6 @@
     .hero-visual { display: none; }
     section { padding: 60px 24px; }
     .contact-layout, .book-layout, .why-grid { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
     .form-grid { grid-template-columns: 1fr; }
     .service-select-grid { grid-template-columns: 1fr 1fr; }
     .rating-hero { gap: 32px; }
